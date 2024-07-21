@@ -4,7 +4,11 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
+    <!-- New Set -->
+    <title>{% block title %}{% endblock %} - Skin Saviour Blog</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+    <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="style.css">
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <script src="https://kit.fontawesome.com/999ca2bb93.js" crossorigin="anonymous">
@@ -13,49 +17,54 @@
   </head>
 
   <body>
-    <nav class="navbar navbar-expand-md bg-dark navbar-dark">
-      <!-- Brand -->
-      <!-- <a class="navbar-brand" href="#">Navbar</a> -->
-
-      <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
-        <a class="navbar-brand" href="/home">
-         <img src="static/assets/img/owl.jpeg" alt="Logo" style="width:40px;">
-       </a>
-     </nav>     
-
-      <!-- Toggler/collapsibe Button -->
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-    
-        <!-- Navbar links -->
-        <div class="collapse navbar-collapse" id="collapsibleNavbar">
-          <ul class="navbar-nav">
-          {% if user.is_authenticated %}
-            <li class="nav-item">
-              <a class="nav-link" href="/home">Home</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="/blog">Blog</a>
-            </li>
-          </li>
-            <li class="nav-item">
-                <a class="nav-link" href="/logout">Logout</a>
-            </li>
-          {% else %}
-            <li class="nav-item">
-              <a class="nav-link" href="/home">Home</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="/login">Login</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="/sign-up">Sign Up</a>
-          {% endif %}
-          </ul>
+    <header>
+      <!-- Header -->
+      <section id="header">
+        <div class="header container">
+          <div class="nav-bar">
+            <div class="brand">
+              <a href="#">
+                <h1><span>S</span>kin <span>S</span>aviour</h1>
+              </a>
+            </div>
+            <div class="nav-list">
+              <div class="hamburger">
+                <div class="bar"></div>
+              </div>
+              <ul>
+                {% if user.is_authenticated %}
+                  <li class="nav-item">
+                    <a class="nav-link" href="/home">Homepage</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="/blog">Blog</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="/menu">Menu</a>
+                  </li>
+                </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="/logout">Logout</a>
+                  </li>
+                {% else %}
+                  <li class="nav-item">
+                    <a class="nav-link" href="/home">Home</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="/login">Login</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="/sign-up">Sign Up</a>
+                {% endif %}
+              </ul>
+            </div>
+          </div>
         </div>
-      </div>
-      </nav>
+      </section>
+      <!-- End Header -->
+  </header>
+
+
         {% with messages = get_flashed_messages(with_categories=true) %}
         {% if messages %} {% for category, message in messages %}
         {% if category == 'error' %}
@@ -72,16 +81,47 @@
             </button>
           </div>
           {% endif %} {% endfor %} {% endif %} {% endwith %}
-    <div class="container"> {% block content %} {% endblock %} </div>
+    
 
-    <footer id="sticky-footer" class="flex-shrink-0 py-4 bg-dark text-white-50">
-        <div class="container text-center">
-          <small> Copyright Nicole Gajo</small>
-        </div>
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+
+
+    <!-- Footer -->
+    <footer>
+      <div class="waves">
+        <div class="wave" id="wave1"></div>
+        <div class="wave" id="wave2"></div>
+      </div>
+      <ul class="social_icon">
+        <li><a href="https://www.facebook.com/facebook/" target="_blank"><ion-icon name="logo-facebook" alt="Facebook Logo"></ion-icon></a></li>
+        <li><a href="https://twitter.com/explore" target="_blank"><ion-icon name="logo-twitter" alt="Twitter Logo"></ion-icon></a></li>
+        <li><a href="https://www.youtube.com/" target="_blank"><ion-icon name="logo-youtube" alt="YouTube Logo"></ion-icon></a></li>
+        <li><a href="https://www.instagram.com/" target="_blank"><ion-icon name="logo-instagram" alt="Instagram Logo"></ion-icon></a></li>
+      </ul>
+      <div class="footerlogo">
+        <img src="./images/skinsaviourlogoimg.png" alt="Skin Saviour Logo">
+      </div>
+      <ul class="menu">
+        <h2>Useful External Links:</h2>
+        <li><a href="https://www.byrdie.com/" target="_blank">Byrdie</a></li>
+        <li><a href="https://www.stylevana.com/en_US/" target="_blank">Stylevana</a></li>
+        <li><a href="https://www.glowrecipe.com/?gclid=Cj0KCQjwlPWgBhDHARIsAH2xdNfi13vn9NdsKGm70pEZXahxDqmpMx7AA4irLWsh8yxX2nXlxysfPEEaAnAHEALw_wcB" target="_blank">Glow Recipe</a></li>
+        <li><a href="https://us.althea.kr/" target="_blank">Althea</a></li>
+        <li><a href="https://hikoco.co.nz/" target="_blank">Hikoco</a></li>
+      </ul>
+      <p>Copyright © 2023 Skin Saviour</p>
     </footer>
+    <!-- End Footer -->
+
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.1.3/js/bootstrap.bundle.min.js"></script>
+    <script src="./app.js"></script>
+    
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
