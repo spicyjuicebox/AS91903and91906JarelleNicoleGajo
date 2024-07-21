@@ -16,7 +16,7 @@ footer
 {
 	position: relative;
 	width: 100%;
-	background: rgb(190, 184, 255);
+	background: rgb(34, 95, 208);
 	min-height: 100px;
 	padding: 20px 50px;
 	display: flex;
@@ -48,7 +48,7 @@ footer .social_icon li a, footer .menu li a {
 
 footer .menu h2 {
 	font-size: 2em;
-	color: rgb(135, 124, 255);
+	color: rgb(10, 40, 97);
 	margin: 0 10px;
 	display: inline-block;
 	transition: 0.5s;
@@ -59,7 +59,7 @@ footer .social_icon li a:hover {
 }
 
 footer .menu li a:hover {
-	color: rgb(150, 151, 255);
+	color: rgb(78, 132, 228)
 }
 
 footer p {
@@ -182,14 +182,14 @@ p {
 .section-title {
 	font-size: 4rem;
 	font-weight: 300;
-	color: rgb(190, 184, 255);
+	color: rgb(40, 216, 90);
 	margin-bottom: 20px;
 	text-transform: uppercase;
 	letter-spacing: 0.2rem;
 	text-align: center;
 }
 .section-title span {
-	color: rgb(135, 124, 255);
+	color: rgb(208, 182, 34);
 }
 
 
@@ -199,7 +199,7 @@ p {
 	padding: 10px 30px;
 	color: white;
 	background-color: transparent;
-	border: 2px solid rgb(190, 184, 255);
+	border: 2px solid rgb(18, 182, 125);
 	font-size: 2rem;
 	text-transform: uppercase;
 	letter-spacing: 0.1rem;
@@ -209,7 +209,7 @@ p {
 }
 .cta:hover {
 	color: white;
-	background-color: rgb(135, 124, 255);
+	background-color: rgb(15, 138, 76);
 }
 /* End Button */
 
@@ -220,7 +220,7 @@ p {
 	color: white;
 }
 .brand span {
-	color: rgb(190, 184, 255);
+	color: rgb(34, 95, 208);
 }
 /* End Brand */
 
@@ -236,7 +236,7 @@ p {
 
 #header .header {
 	min-height: 8vh;
-	background-color: rgba(31, 30, 30, 0.24);
+	background-color: rgba(9, 49, 120, 0.255);
 	transition: 0.3s ease background-color;
 	border-radius: 10px;
 }
@@ -290,7 +290,7 @@ p {
 	top: 50%;
 	left: 53%;
 	transform: translate(-50%, -50%) scale(0);
-	color: rgb(190, 184, 255);
+	color: rgb(78, 132, 228);
 	font-size: 13rem;
 	letter-spacing: 50px;
 	z-index: -1;
@@ -303,7 +303,7 @@ p {
 }
 
 #header .nav-list ul li:hover a {
-	color: rgb(190, 184, 255);
+	color: rgb(78, 132, 228);
     transition: 0.3s ease;
 }
 
@@ -404,7 +404,7 @@ p {
 #blogs .section-title {
 	font-size: 4rem;
 	font-weight: 300;
-	color:rgb(190, 184, 255);
+	color:rgb(78, 132, 228);
 	margin-bottom: 10px;
 	text-transform: uppercase;
 	letter-spacing: .2rem;
@@ -412,7 +412,7 @@ p {
 }
 
 #blogs .section-title span {
-	color: rgb(135, 124, 255);
+	color: rgb(34, 95, 208);
 }
 
 #blogs .blogs-top p{
@@ -455,7 +455,7 @@ p {
 	top: 0;
 	height: 100%;
 	width: 100%;
-	background-image: linear-gradient(60deg, #c99dff 0%, #976eff 100%);
+	background-image: linear-gradient(60deg, #79b0f3 0%, #3989eb 100%);
 	opacity: 0.5;
 	z-index: -1;
 }
@@ -503,7 +503,7 @@ p {
 	top: 0;
 	height: 100%;
 	width: 100%;
-	background-image: linear-gradient(60deg, #c99dff 0%, #976eff 100%);
+	background-image: linear-gradient(60deg, #79b0f3 0%, #3989eb 100%);
 	opacity: 0.5;
 	z-index: -1;
 }
