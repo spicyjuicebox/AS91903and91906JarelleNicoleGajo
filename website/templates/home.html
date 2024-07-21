@@ -1,50 +1,68 @@
 {% extends "template.html" %} {% block title %}Home{% endblock %}
 
 {% block content %}
-<!-- Content section 1-->
-<section id="scroll">
-    <div class="container px-5">
-        <div class="row gx-5 align-items-center">
-            <div class="col-lg-6 order-lg-2">
-                <div class="p-5"><img class="img-fluid rounded-circle" src="static/assets/img/hoothoot.jpeg" alt="..." /></div>
+<!-- Bootstrap Carousel -->
+<div id="hero-carousel" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-indicators">
+        <button type="button" data-bs-target="#hero-carousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#hero-carousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+        <button type="button" data-bs-target="#hero-carousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+    </div>
+
+    <div class="carousel-inner">
+        <div class="carousel-item active c-item">
+            <img src="{{ url_for('static', filename='assets/img/hoothoot.jpeg') }}" class="d-block w-100 c-img" alt="Slide 1">
+            <div class="carousel-caption top-0 mt-3">
+                <h2 class="text-uppercase">Welcome to the</h2>
+                <h1 class="display-1 fw-bolder text-capitalize">Skin Saviour Blog</h1>
             </div>
-            <div class="col-lg-6 order-lg-1">
-                <div class="p-5">
-                    <h2 class="display-4">Owls are great.</h2>
-                    <p>I love owl.</p>
-                </div>
+        </div>
+        <div class="carousel-item c-item">
+            <img src="{{ url_for('static', filename='assets/img/bigowl.jpeg') }}" class="d-block w-100 c-img" alt="Slide 2">
+            <div class="carousel-caption top-0 mt-3">
+                <h2 class="text-uppercase">Find out the</h2>
+                <h1 class="display-1 fw-bolder text-capitalize">Trending Products!</h1>
+            </div>
+        </div>
+        <div class="carousel-item c-item">
+            <img src="{{ url_for('static', filename='assets/img/owl.jpeg') }}" class="d-block w-100 c-img" alt="Slide 3">
+            <div class="carousel-caption top-0 mt-3">
+                <h2 class="text-uppercase">Learn about</h2>
+                <h1 class="display-1 fw-bolder text-capitalize">Skin Types and Routines!</h1>
             </div>
         </div>
     </div>
-</section>
-<!-- Content section 2-->
-<section>
-    <div class="container px-5">
-        <div class="row gx-5 align-items-center">
-            <div class="col-lg-6">
-                <div class="p-5"><img class="img-fluid rounded-circle" src="static/assets/img/whatowl.jpeg" alt="..." /></div>
-            </div>
-            <div class="col-lg-6">
-                <div class="p-5">
-                    <h2 class="display-4">Owls are wise.</h2>
-                    <p>Omg.</p>
-                </div>
-            </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#hero-carousel" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#hero-carousel" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+    </button>
+</div>
+
+<!-- Blogs Section -->
+<section id="blogs">
+    <div class="blogs container">
+        <div class="blogs-top">
+            <h1 class="section-title">Bl<span>o</span>gs</h1>
+            <p>Check out our most POPULAR blogs!</p>
         </div>
-    </div>
-</section>
-<!-- Content section 3-->
-<section>
-    <div class="container px-5">
-        <div class="row gx-5 align-items-center">
-            <div class="col-lg-6 order-lg-2">
-                <div class="p-5"><img class="img-fluid rounded-circle" src="static/assets/img/bigowl.jpeg" alt="..." /></div>
-            </div>
-            <div class="col-lg-6 order-lg-1">
-                <div class="p-5">
-                    <h2 class="display-4">Owls are amazing.</h2>
-                    <p>OWLOWLOWLOWL.</p>
+        <div class="blogs-bottom">
+            <div class="blogs-item">
+                <div class="icon">
+                    <img src="{{ url_for('static', filename='assets/img/icon1.png') }}" alt="Skin Types Icon">
                 </div>
+                <h2>Skin Types</h2>
+                <p>Check out Skin Saviour's blog on the 4 Different Skin Types to know more about yourself and the products your skin needs!</p>
+            </div>
+            <div class="blogs-item2">
+                <div class="icon">
+                    <img src="{{ url_for('static', filename='assets/img/icon2.png') }}" alt="Trending Products Icon">
+                </div>
+                <h2>Trending Products</h2>
+                <p>Discover the latest trends in skincare products to keep your skin healthy and glowing!</p>
             </div>
         </div>
     </div>
