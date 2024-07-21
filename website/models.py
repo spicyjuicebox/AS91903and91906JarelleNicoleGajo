@@ -38,3 +38,11 @@ class Comment(db.Model):
     date_created = db.Column(db.DateTime(timezone=True), default=func.now())
     author = db.Column(db.Integer, db.ForeignKey('user.id', ondelete="CASCADE"), nullable=False)
     post_id = db.Column(db.Integer, db.ForeignKey('post.id', ondelete="CASCADE"), nullable=False)
+
+
+class Order(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    items = db.Column(db.String(1000))
+    user_id = db.Column(db.Integer, db.ForeignKey('user.id'))
+    user_email = db.Column(db.String(150))
+    date_created = db.Column(db.DateTime(timezone=True), default=func.now())

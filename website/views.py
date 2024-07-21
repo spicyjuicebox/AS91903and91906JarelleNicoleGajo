@@ -1,6 +1,6 @@
 from flask import Blueprint, render_template, request, flash, redirect, url_for, jsonify
 from flask_login import login_required, current_user
-from .models import Post, User, Like, Comment
+from .models import Post, User, Like, Comment, Order
 from . import db
 
 views = Blueprint("views", __name__)
@@ -18,7 +18,34 @@ def blog():
     posts = Post.query.all()
     return render_template("blog.html", user=current_user, posts=posts)
 
+@views.route("/order", methods=['GET', 'POST'])
+@login_required
+def menu():
+    if request.method == 'POST':
+        order = request.form.get('order')
+        if order:
+            new_order = Order(items=order, user_id=current_user.id, user_email=current_user.email)
+            db.session.add(new_order)
+            db.session.commit()
+        return redirect(url_for('views.payment', order=order))
+    return render_template("order.html", user=current_user)
 
+
+@views.route("/payment", methods=['POST'])
+@login_required
+def payment():
+    order = request.form.get('order')
+    return render_template("payment.html", order=order, user=current_user)
+
+
+@views.route("/thankyou", methods=['POST'])
+@login_required
+def thankyou():
+    order_details = request.form.get('order')
+    new_order = Order(items=order_details, user_id=current_user.id, user_email=current_user.email)
+    db.session.add(new_order)
+    db.session.commit()
+    return render_template("thankyou.html", user=current_user)
 
 
 @views.route("/create-post", methods=['GET', 'POST'])
@@ -35,10 +62,6 @@ def create_post():
             flash('Post created!', category='success')
             return redirect(url_for('views.blog'))
     return render_template('create_post.html', user=current_user)
-
-
-
-
 
 @views.route("/like-post/<post_id>", methods=['POST'])
 @login_required
