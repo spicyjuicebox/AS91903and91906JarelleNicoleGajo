@@ -313,7 +313,7 @@ p {
 }
 
 #header .nav-list ul li:hover a {
-	color: rgb(78, 132, 228);
+	color: rgb(112, 158, 242);
     transition: 0.3s ease;
 	text-decoration: none;
 }
@@ -415,7 +415,7 @@ p {
 #blogs .section-title {
 	font-size: 4rem;
 	font-weight: 300;
-	color:rgb(78, 132, 228);
+	color:rgb(112, 158, 242);
 	margin-bottom: 10px;
 	text-transform: uppercase;
 	letter-spacing: .2rem;
@@ -423,7 +423,7 @@ p {
 }
 
 #blogs .section-title span {
-	color: rgb(34, 95, 208);
+	color: rgb(78, 132, 228);
 }
 
 #blogs .blogs-top p{
@@ -466,7 +466,7 @@ p {
 	top: 0;
 	height: 100%;
 	width: 100%;
-	background-image: linear-gradient(60deg, #79b0f3 0%, #3989eb 100%);
+	background-image: linear-gradient(60deg, #5b9bea 0%, #0a61cc 100%);
 	opacity: 0.5;
 	z-index: -1;
 }
@@ -514,7 +514,7 @@ p {
 	top: 0;
 	height: 100%;
 	width: 100%;
-	background-image: linear-gradient(60deg, #79b0f3 0%, #3989eb 100%);
+	background-image: linear-gradient(60deg, #5b9bea 0%, #0a61cc 100%);
 	opacity: 0.5;
 	z-index: -1;
 }
