@@ -152,8 +152,13 @@ html {
 	scroll-behavior: smooth;
 }
 
+/*
 a {
 	text-decoration: none;
+}
+*/
+a, a:hover, a:focus, a:active {
+    text-decoration: none !important;
 }
 
 .container {
@@ -218,9 +223,11 @@ p {
 	font-size: 3rem;
 	text-transform: uppercase;
 	color: white;
+	text-decoration: none;
 }
 .brand span {
 	color: rgb(34, 95, 208);
+	text-decoration: none;
 }
 /* End Brand */
 
@@ -232,6 +239,7 @@ p {
 	top: 0;
 	width: 100vw;
 	height: auto;
+	text-decoration: none;
 }
 
 #header .header {
@@ -255,6 +263,7 @@ p {
 	list-style: none;
 	position: absolute;
 	background-color: rgb(135, 124, 255); /*Background colour for hamburger.*/
+	text-decoration: none;
 	width: 100vw;
 	height: 100vh;
 	left: 100%;
@@ -293,6 +302,7 @@ p {
 	color: rgb(78, 132, 228);
 	font-size: 13rem;
 	letter-spacing: 50px;
+	text-decoration: none; /* New */
 	z-index: -1;
 	transition: 0.3s ease letter-spacing;
 }
@@ -305,6 +315,7 @@ p {
 #header .nav-list ul li:hover a {
 	color: rgb(78, 132, 228);
     transition: 0.3s ease;
+	text-decoration: none;
 }
 
 #header .hamburger {
