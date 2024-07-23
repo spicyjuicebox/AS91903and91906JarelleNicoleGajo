@@ -38,6 +38,13 @@ def cash_payment():
 def card_payment():
     return render_template('card_payment.html', user=current_user)
 
+@views.route('/process_card_payment', methods=['POST'])
+@login_required
+def process_card_payment():
+    # Here you would add the logic to process the card payment
+    # For the sake of this example, we'll just redirect to the thank you page
+    return redirect(url_for('views.thank_you'))
+
 @views.route('/thankyou')
 @login_required
 def thank_you():

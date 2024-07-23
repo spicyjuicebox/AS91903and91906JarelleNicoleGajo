@@ -42,11 +42,79 @@
             <!-- Food List -->
             <div class="col-md-8">
                 <h1 class="section-title">The School Food List</h1>
-                <!-- Food Collapse Button -->
-                <button class="btn btn-secondary mb-3" type="button" data-bs-toggle="collapse" data-bs-target="#foodCollapse" aria-expanded="false" aria-controls="foodCollapse">
-                    Food
+                <!-- Special Collapse Button -->
+                <button class="btn btn-secondary mb-3" type="button" data-bs-toggle="collapse" data-bs-target="#specialCollapse" aria-expanded="false" aria-controls="specialCollapse">
+                    Special
                 </button>
-                <div class="collapse" id="foodCollapse">
+                <div class="collapse" id="specialCollapse">
+                    <div class="card card-body">
+                        <div class="row">
+                            <div class="col-md-4">
+                                <div class="square-image">
+                                    <img src="{{ url_for('static', filename='assets/img/sandwich.jpg') }}" class="img-thumbnail" alt="Monday">
+                                </div>
+                                <button class="btn btn-primary add-to-order mt-2" data-topping="Monday">Add Monday</button>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="square-image">
+                                    <img src="{{ url_for('static', filename='assets/img/sausage.jpg') }}" class="img-thumbnail" alt="Tuesday">
+                                </div>
+                                <button class="btn btn-primary add-to-order mt-2" data-topping="Tuesday">Add Tuesday</button>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="square-image">
+                                    <img src="{{ url_for('static', filename='assets/img/burrito.jpg') }}" class="img-thumbnail" alt="Wednesday">
+                                </div>
+                                <button class="btn btn-primary add-to-order mt-2" data-topping="Wednesday">Add Wednesday</button>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="square-image">
+                                    <img src="{{ url_for('static', filename='assets/img/burrito.jpg') }}" class="img-thumbnail" alt="Thursday">
+                                </div>
+                                <button class="btn btn-primary add-to-order mt-2" data-topping="Thursday">Add Thursday</button>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="square-image">
+                                    <img src="{{ url_for('static', filename='assets/img/burrito.jpg') }}" class="img-thumbnail" alt="Friday">
+                                </div>
+                                <button class="btn btn-primary add-to-order mt-2" data-topping="Friday">+ Friday</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Hot Food Collapse Button -->
+                <button class="btn btn-secondary mb-3" type="button" data-bs-toggle="collapse" data-bs-target="#hotfoodCollapse" aria-expanded="false" aria-controls="hotfoodCollapse">
+                    Hot Food
+                </button>
+                <div class="collapse" id="hotfoodCollapse">
+                    <div class="card card-body">
+                        <div class="row">
+                            <div class="col-md-4">
+                                <div class="square-image">
+                                    <img src="{{ url_for('static', filename='assets/img/sandwich.jpg') }}" class="img-thumbnail" alt="Sandwich">
+                                </div>
+                                <button class="btn btn-primary add-to-order mt-2" data-topping="Sandwich">Add Sandwich</button>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="square-image">
+                                    <img src="{{ url_for('static', filename='assets/img/sausage.jpg') }}" class="img-thumbnail" alt="Sausage">
+                                </div>
+                                <button class="btn btn-primary add-to-order mt-2" data-topping="Sausage">Add Sausage</button>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="square-image">
+                                    <img src="{{ url_for('static', filename='assets/img/burrito.jpg') }}" class="img-thumbnail" alt="Burrito">
+                                </div>
+                                <button class="btn btn-primary add-to-order mt-2" data-topping="Burrito">Add Burrito</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Cold Food Collapse Button -->
+                <button class="btn btn-secondary mb-3" type="button" data-bs-toggle="collapse" data-bs-target="#coldfoodCollapse" aria-expanded="false" aria-controls="coldfoodCollapse">
+                    Cold Food
+                </button>
+                <div class="collapse" id="coldfoodCollapse">
                     <div class="card card-body">
                         <div class="row">
                             <div class="col-md-4">
