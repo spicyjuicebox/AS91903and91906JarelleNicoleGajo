@@ -34,30 +34,72 @@
     </button>
 </div>
 
-<!-- Blogs Section -->
-<section id="blogs">
-    <div class="blogs container">
-        <div class="blogs-top">
-            <h1 class="section-title"><span>G</span>etting <span>S</span>tarted</h1>
-            <p>Welcome to the SMC Tuckshop Orders page!</p>
-            <p>Using this website, you can create your food order online and have it prepared for a quick and easy pickup during lunchtime or interval!</p>
-        </div>
-        <div class="blogs-bottom">
-            <div class="blogs-item">
-                <div class="icon">
-                    <img src="{{ url_for('static', filename='assets/img/icons8-1-100.png') }}" alt="Icon1">
+<!-- Ordering Section -->
+<!-- Food List Section -->
+<section id="foodlist">
+    <div class="container">
+        <div class="row">
+            <!-- Food List -->
+            <div class="col-md-8">
+                <h1 class="section-title">The School Food List</h1>
+                <!-- First Dropdown -->
+                <div class="dropdown mb-3">
+                    <button class="btn btn-secondary dropdown-toggle" type="button" id="specialDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+                        Food
+                    </button>
+                    <ul class="dropdown-menu" aria-labelledby="firstDropdown">
+                        <li><a class="dropdown-item add-to-order" href="#" data-topping="Sandwich">Sandwich</a></li>
+                        <li><a class="dropdown-item add-to-order" href="#" data-topping="Sausage">Sausage</a></li>
+                        <li><a class="dropdown-item add-to-order" href="#" data-topping="Burrito">Burrito</a></li>
+                    </ul>
                 </div>
-                <h2>Order</h2>
-                <p>Head to the 'Order' page and create your order by adding all the items to your cart!</p>
+                <!-- Second Dropdown -->
+                <div class="dropdown mb-3">
+                    <button class="btn btn-secondary dropdown-toggle" type="button" id="drinkDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+                        Drink
+                    </button>
+                    <ul class="dropdown-menu" aria-labelledby="secondDropdown">
+                        <li><a class="dropdown-item add-to-order" href="#" data-topping="Pepsi">Pepsi</a></li>
+                        <li><a class="dropdown-item add-to-order" href="#" data-topping="Water">Water</a></li>
+                        <li><a class="dropdown-item add-to-order" href="#" data-topping="Lipton Iced Tea">Lipton Iced Tea</a></li>
+                    </ul>
+                </div>
             </div>
-            <div class="blogs-item2">
-                <div class="icon">
-                    <img src="{{ url_for('static', filename='assets/img/icons8-2-100.png') }}" alt="Icon2">
-                </div>
-                <h2>Finish</h2>
-                <p>Make your payment and you will have your order placed for pickup.</p>
+            <!-- Cart Section -->
+            <div class="col-md-4">
+                <h1 class="section-title">Your Order</h1>
+                <ul class="list-group" id="cart">
+                    <!-- Added -->
+                </ul>
+                <button class="btn btn-success mt-3" id="place-order">Place Order</button>
             </div>
         </div>
     </div>
 </section>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const cart = document.getElementById('cart');
+
+        document.querySelectorAll('.add-to-order').forEach(button => {
+            button.addEventListener('click', function (event) {
+                event.preventDefault();
+                const topping = this.getAttribute('data-topping');
+                const listItem = document.createElement('li');
+                listItem.classList.add('list-group-item');
+                listItem.textContent = topping;
+                cart.appendChild(listItem);
+            });
+        });
+
+        document.getElementById('place-order').addEventListener('click', function () {
+            const items = [];
+            cart.querySelectorAll('.list-group-item').forEach(item => {
+                items.push(item.textContent);
+            });
+            alert('Order placed: ' + items.join(', '));
+            cart.innerHTML = ''; // Clear the cart after placing order
+        });
+    });
+</script>
 {% endblock %}
