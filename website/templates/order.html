@@ -33,36 +33,58 @@
         <span class="visually-hidden">Next</span>
     </button>
 </div>
+<!-- End Bootstrap Carousel -->
 
 <!-- Ordering Section -->
-<!-- Food List Section -->
 <section id="foodlist">
     <div class="container">
         <div class="row">
             <!-- Food List -->
             <div class="col-md-8">
                 <h1 class="section-title">The School Food List</h1>
-                <!-- First Dropdown -->
-                <div class="dropdown mb-3">
-                    <button class="btn btn-secondary dropdown-toggle" type="button" id="specialDropdown" data-bs-toggle="dropdown" aria-expanded="false">
-                        Food
-                    </button>
-                    <ul class="dropdown-menu" aria-labelledby="firstDropdown">
-                        <li><a class="dropdown-item add-to-order" href="#" data-topping="Sandwich">Sandwich</a></li>
-                        <li><a class="dropdown-item add-to-order" href="#" data-topping="Sausage">Sausage</a></li>
-                        <li><a class="dropdown-item add-to-order" href="#" data-topping="Burrito">Burrito</a></li>
-                    </ul>
+                <!-- Food Collapse Button -->
+                <button class="btn btn-secondary mb-3" type="button" data-bs-toggle="collapse" data-bs-target="#foodCollapse" aria-expanded="false" aria-controls="foodCollapse">
+                    Food
+                </button>
+                <div class="collapse" id="foodCollapse">
+                    <div class="card card-body">
+                        <div class="row">
+                            <div class="col-md-4">
+                                <img src="{{ url_for('static', filename='assets/img/sandwich.jpg') }}" class="img-thumbnail" alt="Sandwich">
+                                <button class="btn btn-primary add-to-order" data-topping="Sandwich">Add Sandwich</button>
+                            </div>
+                            <div class="col-md-4">
+                                <img src="{{ url_for('static', filename='assets/img/sausage.jpg') }}" class="img-thumbnail" alt="Sausage">
+                                <button class="btn btn-primary add-to-order" data-topping="Sausage">Add Sausage</button>
+                            </div>
+                            <div class="col-md-4">
+                                <img src="{{ url_for('static', filename='assets/img/burrito.jpg') }}" class="img-thumbnail" alt="Burrito">
+                                <button class="btn btn-primary add-to-order" data-topping="Burrito">Add Burrito</button>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <!-- Second Dropdown -->
-                <div class="dropdown mb-3">
-                    <button class="btn btn-secondary dropdown-toggle" type="button" id="drinkDropdown" data-bs-toggle="dropdown" aria-expanded="false">
-                        Drink
-                    </button>
-                    <ul class="dropdown-menu" aria-labelledby="secondDropdown">
-                        <li><a class="dropdown-item add-to-order" href="#" data-topping="Pepsi">Pepsi</a></li>
-                        <li><a class="dropdown-item add-to-order" href="#" data-topping="Water">Water</a></li>
-                        <li><a class="dropdown-item add-to-order" href="#" data-topping="Lipton Iced Tea">Lipton Iced Tea</a></li>
-                    </ul>
+                <!-- Drink Collapse Button -->
+                <button class="btn btn-secondary mb-3" type="button" data-bs-toggle="collapse" data-bs-target="#drinkCollapse" aria-expanded="false" aria-controls="drinkCollapse">
+                    Drink
+                </button>
+                <div class="collapse" id="drinkCollapse">
+                    <div class="card card-body">
+                        <div class="row">
+                            <div class="col-md-4">
+                                <img src="{{ url_for('static', filename='assets/img/pepsi.jpg') }}" class="img-thumbnail" alt="Pepsi">
+                                <button class="btn btn-primary add-to-order" data-topping="Pepsi">Add Pepsi</button>
+                            </div>
+                            <div class="col-md-4">
+                                <img src="{{ url_for('static', filename='assets/img/water.jpg') }}" class="img-thumbnail" alt="Water">
+                                <button class="btn btn-primary add-to-order" data-topping="Water">Add Water</button>
+                            </div>
+                            <div class="col-md-4">
+                                <img src="{{ url_for('static', filename='assets/img/iced_tea.jpg') }}" class="img-thumbnail" alt="Lipton Iced Tea">
+                                <button class="btn btn-primary add-to-order" data-topping="Lipton Iced Tea">Add Lipton Iced Tea</button>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
             <!-- Cart Section -->
@@ -86,8 +108,15 @@
                 event.preventDefault();
                 const topping = this.getAttribute('data-topping');
                 const listItem = document.createElement('li');
-                listItem.classList.add('list-group-item');
+                listItem.classList.add('list-group-item', 'd-flex', 'justify-content-between', 'align-items-center');
                 listItem.textContent = topping;
+                const removeButton = document.createElement('button');
+                removeButton.classList.add('btn', 'btn-danger', 'btn-sm');
+                removeButton.textContent = 'Remove';
+                removeButton.addEventListener('click', function () {
+                    cart.removeChild(listItem);
+                });
+                listItem.appendChild(removeButton);
                 cart.appendChild(listItem);
             });
         });
@@ -95,7 +124,7 @@
         document.getElementById('place-order').addEventListener('click', function () {
             const items = [];
             cart.querySelectorAll('.list-group-item').forEach(item => {
-                items.push(item.textContent);
+                items.push(item.textContent.replace('Remove', '').trim());
             });
             alert('Order placed: ' + items.join(', '));
             cart.innerHTML = ''; // Clear the cart after placing order
