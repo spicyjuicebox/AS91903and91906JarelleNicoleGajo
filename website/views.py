@@ -21,31 +21,28 @@ def blog():
 @views.route("/order", methods=['GET', 'POST'])
 @login_required
 def menu():
-    if request.method == 'POST':
-        order = request.form.get('order')
-        if order:
-            new_order = Order(items=order, user_id=current_user.id, user_email=current_user.email)
-            db.session.add(new_order)
-            db.session.commit()
-        return redirect(url_for('views.payment', order=order))
     return render_template("order.html", user=current_user)
 
-
-@views.route("/payment", methods=['POST'])
+@views.route('/payment_option')
 @login_required
-def payment():
-    order = request.form.get('order')
-    return render_template("payment.html", order=order, user=current_user)
+def payment_option():
+    return render_template('payment_option.html', user=current_user)
 
-
-@views.route("/thankyou", methods=['POST'])
+@views.route('/cash_payment')
 @login_required
-def thankyou():
-    order_details = request.form.get('order')
-    new_order = Order(items=order_details, user_id=current_user.id, user_email=current_user.email)
-    db.session.add(new_order)
-    db.session.commit()
-    return render_template("thankyou.html", user=current_user)
+def cash_payment():
+    return render_template('cash_payment.html', user=current_user)
+
+@views.route('/card_payment')
+@login_required
+def card_payment():
+    return render_template('card_payment.html', user=current_user)
+
+@views.route('/thankyou')
+@login_required
+def thank_you():
+    return render_template('thankyou.html', user=current_user)
+
 
 
 @views.route("/create-post", methods=['GET', 'POST'])

@@ -138,8 +138,9 @@
             cart.querySelectorAll('.list-group-item').forEach(item => {
                 items.push(item.textContent.replace('Remove', '').trim());
             });
-            alert('Order placed: ' + items.join(', '));
-            cart.innerHTML = ''; // Clear the cart after placing order
+
+            // Redirect to the payment option page
+            window.location.href = "{{ url_for('views.payment_option') }}";
         });
     });
 </script>
