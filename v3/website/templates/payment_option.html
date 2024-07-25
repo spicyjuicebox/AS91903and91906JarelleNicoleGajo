@@ -9,6 +9,17 @@
     </div>
 </div>
 
+<form method="POST" action="{{ url_for('payment_option') }}">
+    <div class="form-group">
+        <label for="payment_type">Choose Payment Option:</label>
+        <select class="form-control" id="payment_type" name="payment_type">
+            <option value="Credit Card">Credit Card</option>
+            <option value="Cash">Cash</option>
+        </select>
+    </div>
+    <button type="submit" class="btn btn-primary mt-3">Submit</button>
+</form>
+
 <script>
     document.getElementById('cashOption').addEventListener('click', function () {
         window.location.href = "{{ url_for('views.cash_payment') }}";

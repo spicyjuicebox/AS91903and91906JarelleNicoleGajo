@@ -1,4 +1,5 @@
-{% extends "template.html" %} {% block title %}Order{% endblock %}
+{% extends "template.html" %}
+{% block title %}Order{% endblock %}
 
 {% block content %}
 <!-- Bootstrap Carousel -->
@@ -7,7 +8,6 @@
         <button type="button" data-bs-target="#hero-carousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
         <button type="button" data-bs-target="#hero-carousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
     </div>
-
     <div class="carousel-inner">
         <div class="carousel-item active c-item">
             <img src="{{ url_for('static', filename='assets/img/foodorderslide1.jpeg') }}" class="d-block w-100 c-img" alt="Slide 1">
@@ -217,8 +217,26 @@
                 items.push(item.textContent.replace('Remove', '').trim());
             });
 
-            // Redirect to the payment option page
-            window.location.href = "{{ url_for('views.payment_option') }}";
+            fetch('/order', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    items: items.join(', '),
+                    payment_type: 'not selected yet'
+                })
+            }).then(response => response.json()).then(data => {
+                console.log('Response:', data); // Add logging for debugging
+                if (data.success) {
+                    window.location.href = "{{ url_for('views.payment_option') }}";
+                } else {
+                    alert('Failed to place order');
+                }
+            }).catch(error => {
+                console.error('Error:', error);
+                alert('Failed to place order due to an error.');
+            });
         });
     });
 </script>

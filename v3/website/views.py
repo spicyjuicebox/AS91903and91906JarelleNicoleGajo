@@ -18,14 +18,36 @@ def blog():
     posts = Post.query.all()
     return render_template("blog.html", user=current_user, posts=posts)
 
-@views.route("/order", methods=['GET', 'POST'])
+
+@views.route("/order")
 @login_required
-def menu():
+def order():
     return render_template("order.html", user=current_user)
 
-@views.route('/payment_option')
+@views.route("/orderdetails", methods=['POST'])
+@login_required
+def order_details():
+    if request.method == 'POST':
+        items = request.json.get('items')
+        payment_type = request.json.get('payment_type')
+        order = Order(items=items, user_id=current_user.id, user_email=current_user.email, payment_type=payment_type)
+        db.session.add(order)
+        db.session.commit()
+        return jsonify({"success": True})
+    return jsonify({"success": False}), 400
+
+@views.route('/payment_option', methods=['GET', 'POST'])
 @login_required
 def payment_option():
+    if request.method == 'POST':
+        payment_type = request.form.get('payment_type')
+        order = Order.query.filter_by(user_id=current_user.id).order_by(Order.id.desc()).first()
+        if order:
+            order.payment_type = payment_type
+            db.session.commit()
+            return redirect(url_for('views.thank_you'))
+        else:
+            flash('No order found for the current user.', category='error')
     return render_template('payment_option.html', user=current_user)
 
 @views.route('/cash_payment')
@@ -33,10 +55,12 @@ def payment_option():
 def cash_payment():
     return render_template('cash_payment.html', user=current_user)
 
+
 @views.route('/card_payment')
 @login_required
 def card_payment():
     return render_template('card_payment.html', user=current_user)
+
 
 @views.route('/process_card_payment', methods=['POST'])
 @login_required
@@ -49,7 +73,6 @@ def process_card_payment():
 @login_required
 def thank_you():
     return render_template('thankyou.html', user=current_user)
-
 
 
 @views.route("/create-post", methods=['GET', 'POST'])

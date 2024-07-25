@@ -1,5 +1,21 @@
-{% extends "template.html" %} {% block title %}Home{% endblock %}{% block content 
-    %}
+{% extends "template.html" %} {% block title %}Home{% endblock %}
+
+{% block content %}
+<!-- Bootstrap Carousel -->
+<div id="hero-carousel" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-inner">
+        <div class="carousel-item active c-item">
+            <img src="{{ url_for('static', filename='assets/img/qaslide1.jpeg') }}" class="d-block w-100 c-img" alt="Slide 1">
+            <div class="carousel-caption top-0 mt-3">
+                <h2 class="text-uppercase">Send through</h2>
+                <h1 class="display-1 fw-bolder text-capitalize">Questions or Suggestions!</h1>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End Bootstrap Carousel -->
+
+
     <h1 align="center">{% block header %}Posts{% endblock %}</h1>
     <div id="posts">
         {% for post in posts %}
