@@ -13,6 +13,7 @@ class User(db.Model,UserMixin):
     posts = db.relationship('Post', backref='user', passive_deletes=True)
     likes = db.relationship('Like', backref='user', passive_deletes=True)
     comments = db.relationship('Comment', backref='user', passive_deletes=True)
+    orders = db.relationship('Order')
 
 
 class Post(db.Model):
@@ -46,3 +47,4 @@ class Order(db.Model):
     user_id = db.Column(db.Integer, db.ForeignKey('user.id'))
     user_email = db.Column(db.String(150))
     date_created = db.Column(db.DateTime(timezone=True), default=func.now())
+    payment_method = db.Column(db.String(50), nullable=False)

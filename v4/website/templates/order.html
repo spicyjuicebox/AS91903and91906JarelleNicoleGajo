@@ -217,8 +217,7 @@
                 items.push(item.textContent.replace('Remove', '').trim());
             });
 
-            // Redirect to the payment option page
-            window.location.href = "{{ url_for('views.payment_option') }}";
+            window.location.href = "{{ url_for('views.payment_option') }}?order=" + encodeURIComponent(items.join(', '));
         });
     });
 </script>

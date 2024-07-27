@@ -4,8 +4,8 @@
 <div class="container">
     <h1 class="text-center mt-5">How would you like to pay?</h1>
     <div class="d-flex justify-content-center mt-5">
-        <button onclick="window.location.href='{{ url_for('views.cash_payment') }}'">Cash</button>
-        <button onclick="window.location.href='{{ url_for('views.card_payment') }}'">Card</button>
+        <button onclick="window.location.href='{{ url_for('views.cash_payment', order=request.args.get('order')) }}'">Cash</button>
+        <button onclick="window.location.href='{{ url_for('views.card_payment', order=request.args.get('order')) }}'">Card</button>
     </div>
 </div>
 
