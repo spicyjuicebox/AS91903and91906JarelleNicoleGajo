@@ -217,7 +217,7 @@
                 items.push(item.textContent.replace('Remove', '').trim());
             });
 
-            // Redirecting to the payment option page including the order details
+            // Redirect to the payment option page with the order details
             window.location.href = "{{ url_for('views.payment_option') }}?order=" + encodeURIComponent(items.join(', '));
         });
     });

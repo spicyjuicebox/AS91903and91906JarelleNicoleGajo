@@ -18,7 +18,7 @@ def blog():
     posts = Post.query.all()
     return render_template("blog.html", user=current_user, posts=posts)
 
-# Order
+# New
 @views.route("/order", methods=['GET', 'POST'])
 @login_required
 def menu():
@@ -71,7 +71,7 @@ def process_card_payment():
 @login_required
 def thank_you():
     return render_template('thankyou.html', user=current_user)
-# End Order
+# End
 
 
 @views.route("/create-post", methods=['GET', 'POST'])
