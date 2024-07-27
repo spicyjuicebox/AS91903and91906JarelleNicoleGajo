@@ -1,0 +1,21 @@
+{% extends "template.html" %} {% block title %}Payment Option{% endblock %}
+
+{% block content %}
+<div class="container">
+    <h1 class="text-center mt-5">How would you like to pay?</h1>
+    <div class="d-flex justify-content-center mt-5">
+        <button onclick="window.location.href='{{ url_for('views.cash_payment') }}'">Cash</button>
+        <button onclick="window.location.href='{{ url_for('views.card_payment') }}'">Card</button>
+    </div>
+</div>
+
+<script>
+    document.getElementById('cashOption').addEventListener('click', function () {
+        window.location.href = "{{ url_for('views.cash_payment') }}";
+    });
+
+    document.getElementById('cardOption').addEventListener('click', function () {
+        window.location.href = "{{ url_for('views.card_payment') }}";
+    });
+</script>
+{% endblock %}
