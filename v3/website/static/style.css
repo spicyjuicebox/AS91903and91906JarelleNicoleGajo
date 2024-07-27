@@ -79,6 +79,70 @@ rgb(78, 132, 228), rgb(112, 158, 242)
 }
 /* Login and Signup End */
 
+/* Q&A Post */
+.form-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+.form-box {
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 30px;
+	border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(78, 132, 228, 0.4);
+    width: 100%;
+    max-width: 400px;
+}
+
+.form-box h2 {
+    margin-bottom: 20px;
+    color: rgb(78, 132, 228); /* Login Title */
+    text-align: center;
+}
+
+.form-box .input-group {
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.form-box .input-group label {
+    display: block;
+    margin-bottom: 5px;
+    color: rgb(78, 132, 228); /* Small Title */
+}
+
+.form-box .input-group input {
+    width: 100%;
+    max-width: 400px;
+    padding: 10px;
+    border: 1px solid rgb(112, 158, 242);
+    font-size: 1.6rem;
+    display: block;
+    margin: 0 auto;
+}
+
+.form-box button {
+    width: 90%;
+    max-width: 300px;
+    padding: 10px;
+    background-color: rgb(78, 132, 228);
+    border: none;
+    border-radius: 10px;
+    color: white;
+    font-size: 1.6rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    display: block;
+    margin: 0 auto;
+}
+
+.form-box button:hover {
+    background-color: rgb(112, 158, 242);
+}
+/* Q&A Post End */
+
 /* Ordering Section */
 .square-image {
     width: 100%;

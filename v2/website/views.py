@@ -21,11 +21,19 @@ def blog():
 @views.route("/order", methods=['GET', 'POST'])
 @login_required
 def menu():
+    if request.method == 'POST':
+        order = request.form.get('order')
+        if order:
+            new_order = Order(items=order, user_id=current_user.id, user_email=current_user.email)
+            db.session.add(new_order)
+            db.session.commit()
+        return redirect(url_for('views.payment_option', order=order))
     return render_template("order.html", user=current_user)
 
 @views.route('/payment_option')
 @login_required
 def payment_option():
+    order = request.form.get('order')
     return render_template('payment_option.html', user=current_user)
 
 @views.route('/cash_payment')
@@ -41,13 +49,15 @@ def card_payment():
 @views.route('/process_card_payment', methods=['POST'])
 @login_required
 def process_card_payment():
-    # Here you would add the logic to process the card payment
-    # For the sake of this example, we'll just redirect to the thank you page
     return redirect(url_for('views.thank_you'))
 
 @views.route('/thankyou')
 @login_required
 def thank_you():
+    order_details = request.form.get('order')
+    new_order = Order(items=order_details, user_id=current_user.id, user_email=current_user.email)
+    db.session.add(new_order)
+    db.session.commit()
     return render_template('thankyou.html', user=current_user)
 
 

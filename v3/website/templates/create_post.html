@@ -34,17 +34,53 @@
 </div>
 <!-- End Bootstrap Carousel -->
 
-<h1 align="center">Write your Tuckshop Question or Suggestion</h1>
-<form method="POST">
-    <textarea name="text" id="text" class="form-control"></textarea>
-    <br />
-    <div align="center">
-        <button type="submit" class="btn btn-lg btn-primary">Post</button>
-    </div>
-</form>
-<br />
-<div align="center">
-    <a href="/home"
-    ><button type="button" class="btn btn-lg btn-secondary">Back</button></a>
-</div>
+<!-- Create Post Section -->
+<div class="form-container">
+    <div class="form-box">
+        <h1 align="center">Write your Tuckshop Question or Suggestion</h1>
+        <form method="POST">
+            <textarea name="text" id="text" class="form-control"></textarea>
+            <br />
+            <div align="center">
+                <button type="submit" class="btn btn-lg btn-primary">Post</button>
+            </div>
+        </form>
+        <br />
+        <div align="center">
+            <a href="/home"
+            ><button type="button" class="btn btn-lg btn-secondary">Back</button></a>
+        </div>
+<!-- End Create Post Section -->
 {% endblock %}
+
+
+<div class="form-container">
+    <div class="form-box">
+        <h2>Login</h2>
+        <form method="POST" action="/login">
+            <div class="input-group">
+                <label for="email">Email Address</label>
+                <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    placeholder="Enter Email"
+                    required
+                />
+            </div>
+            <div class="input-group">
+                <label for="password">Password</label>
+                <input
+                    type="password"
+                    id="password"
+                    name="password"
+                    placeholder="Enter Password"
+                    required
+                />
+            </div>
+            <div class="input-group">
+                <button type="submit">Login</button>
+            </div>
+        </form>
+    </div>
+</div>

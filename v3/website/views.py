@@ -18,61 +18,60 @@ def blog():
     posts = Post.query.all()
     return render_template("blog.html", user=current_user, posts=posts)
 
-
-@views.route("/order")
+# Order
+@views.route("/order", methods=['GET', 'POST'])
 @login_required
-def order():
-    return render_template("order.html", user=current_user)
-
-@views.route("/orderdetails", methods=['POST'])
-@login_required
-def order_details():
+def menu():
     if request.method == 'POST':
-        items = request.json.get('items')
-        payment_type = request.json.get('payment_type')
-        order = Order(items=items, user_id=current_user.id, user_email=current_user.email, payment_type=payment_type)
-        db.session.add(order)
-        db.session.commit()
-        return jsonify({"success": True})
-    return jsonify({"success": False}), 400
+        order = request.form.get('order')
+        if order:
+            return redirect(url_for('views.payment_option', order=order))
+    return render_template("order.html", user=current_user)
 
 @views.route('/payment_option', methods=['GET', 'POST'])
 @login_required
 def payment_option():
-    if request.method == 'POST':
-        payment_type = request.form.get('payment_type')
-        order = Order.query.filter_by(user_id=current_user.id).order_by(Order.id.desc()).first()
-        if order:
-            order.payment_type = payment_type
-            db.session.commit()
-            return redirect(url_for('views.thank_you'))
-        else:
-            flash('No order found for the current user.', category='error')
-    return render_template('payment_option.html', user=current_user)
+    order = request.args.get('order')
+    if not order:
+        flash('No order found.', category='error')
+        return redirect(url_for('views.menu'))
+    return render_template('payment_option.html', user=current_user, order=order)
 
-@views.route('/cash_payment')
+@views.route('/cash_payment', methods=['GET', 'POST'])
 @login_required
 def cash_payment():
-    return render_template('cash_payment.html', user=current_user)
+    order = request.args.get('order')
+    if not order:
+        flash('No order found.', category='error')
+        return redirect(url_for('views.menu'))
+    new_order = Order(items=order, user_id=current_user.id, user_email=current_user.email, payment_method='Cash')
+    db.session.add(new_order)
+    db.session.commit()
+    return render_template('cash_payment.html', user=current_user, order=order)
 
-
-@views.route('/card_payment')
+@views.route('/card_payment', methods=['GET', 'POST'])
 @login_required
 def card_payment():
-    return render_template('card_payment.html', user=current_user)
-
+    order = request.args.get('order')
+    if not order:
+        flash('No order found.', category='error')
+        return redirect(url_for('views.menu'))
+    return render_template('card_payment.html', user=current_user, order=order)
 
 @views.route('/process_card_payment', methods=['POST'])
 @login_required
 def process_card_payment():
-    # Here you would add the logic to process the card payment
-    # For the sake of this example, we'll just redirect to the thank you page
+    order = request.form.get('order')
+    new_order = Order(items=order, user_id=current_user.id, user_email=current_user.email, payment_method='Card')
+    db.session.add(new_order)
+    db.session.commit()
     return redirect(url_for('views.thank_you'))
 
-@views.route('/thankyou')
+@views.route('/thankyou', methods=['GET'])
 @login_required
 def thank_you():
     return render_template('thankyou.html', user=current_user)
+# End Order
 
 
 @views.route("/create-post", methods=['GET', 'POST'])
