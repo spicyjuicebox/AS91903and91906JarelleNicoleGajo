@@ -7,7 +7,6 @@
         <button type="button" data-bs-target="#hero-carousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
         <button type="button" data-bs-target="#hero-carousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
     </div>
-
     <div class="carousel-inner">
         <div class="carousel-item active c-item">
             <img src="{{ url_for('static', filename='assets/img/foodorderslide1.jpeg') }}" class="d-block w-100 c-img" alt="Slide 1">
@@ -36,142 +35,116 @@
 <!-- End Bootstrap Carousel -->
 
 <!-- Ordering Section -->
-<section id="foodlist">
+<section id="foodlist" class="mt-5">
     <div class="container">
         <div class="row">
             <!-- Food List -->
             <div class="col-md-8">
-                <h1 class="section-title">The School Food List</h1>
-                <!-- Meal of the Day Collapse Button -->
-                <button class="btn btn-secondary mb-3" type="button" data-bs-toggle="collapse" data-bs-target="#mealofthedayCollapse" aria-expanded="false" aria-controls="mealofthedayCollapse">
-                    Meal of the Day
-                </button>
-                <div class="collapse" id="mealofthedayCollapse">
-                    <div class="card card-body">
-                        <div class="row">
-                            <div class="col-md-4">
-                                <div class="square-image">
-                                    <img src="{{ url_for('static', filename='assets/img/sandwich.jpg') }}" class="img-thumbnail" alt="Macaroni and Cheese">
+                <h1 class="section-title"><span>T</span>uckshop    <span>M</span>enu</h1>
+                <div class="accordion" id="foodAccordion">
+                    <!-- Meal of the Day -->
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingOne">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#mealofthedayCollapse" aria-expanded="true" aria-controls="mealofthedayCollapse">
+                                Meal of the Day
+                            </button>
+                        </h2>
+                        <div id="mealofthedayCollapse" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#foodAccordion">
+                            <div class="accordion-body">
+                                <div class="row">
+                                    <div class="col-md-4 mb-3">
+                                        <div class="square-image">
+                                            <img src="{{ url_for('static', filename='assets/img/sandwich.jpg') }}" class="img-thumbnail" alt="Macaroni and Cheese">
+                                        </div>
+                                        <h5 class="mt-2 text-center">Monday: Macaroni and Cheese</h5>
+                                        <button class="btn btn-primary add-to-order w-100 mt-2" data-topping="Monday: Macaroni and Cheese [$6.00]">+ $6.00</button>
+                                    </div>
+                                    <div class="col-md-4 mb-3">
+                                        <div class="square-image">
+                                            <img src="{{ url_for('static', filename='assets/img/sausage.jpg') }}" class="img-thumbnail" alt="Burritos">
+                                        </div>
+                                        <h5 class="mt-2 text-center">Tuesday: Burritos</h5>
+                                        <button class="btn btn-primary add-to-order w-100 mt-2" data-topping="Tuesday: Burritos [$6.00]">+ $6.00</button>
+                                    </div>
+                                    <div class="col-md-4 mb-3">
+                                        <div class="square-image">
+                                            <img src="{{ url_for('static', filename='assets/img/burrito.jpg') }}" class="img-thumbnail" alt="Sushi">
+                                        </div>
+                                        <h5 class="mt-2 text-center">Wednesday: Sushi</h5>
+                                        <h5 class="mt-2 text-center">Chicken, Salmon, Veggie, Teriyaki, Onigiri</h5>
+                                        <button class="btn btn-primary add-to-order w-100 mt-2" data-topping="Wednesday: Sushi (Chicken) [$6.00]">+ $6.00 (Chicken)</button>
+                                        <button class="btn btn-primary add-to-order w-100 mt-2" data-topping="Wednesday: Sushi (Salmon) [$6.00]">+ $6.00 (Salmon)</button>
+                                        <button class="btn btn-primary add-to-order w-100 mt-2" data-topping="Wednesday: Sushi (Veggie) [$6.00]">+ $6.00 (Veggie)</button>
+                                        <button class="btn btn-primary add-to-order w-100 mt-2" data-topping="Wednesday: Sushi (Teriyaki) [$6.00]">+ $6.00 (Teriyaki)</button>
+                                        <button class="btn btn-primary add-to-order w-100 mt-2" data-topping="Wednesday: Sushi (Onigiri) [$6.00]">+ $6.00 (Onigiri)</button>
+                                    </div>
+                                    <div class="col-md-4 mb-3">
+                                        <div class="square-image">
+                                            <img src="{{ url_for('static', filename='assets/img/burrito.jpg') }}" class="img-thumbnail" alt="Buttered Chicken">
+                                        </div>
+                                        <h5 class="mt-2 text-center">Thursday: Buttered Chicken</h5>
+                                        <button class="btn btn-primary add-to-order w-100 mt-2" data-topping="Thursday: Buttered Chicken [$6.00]">+ $6.00</button>
+                                    </div>
+                                    <div class="col-md-4 mb-3">
+                                        <div class="square-image">
+                                            <img src="{{ url_for('static', filename='assets/img/burrito.jpg') }}" class="img-thumbnail" alt="Loaded Wedges">
+                                        </div>
+                                        <h5 class="mt-2 text-center">Friday: Loaded Wedges</h5>
+                                        <button class="btn btn-primary add-to-order w-100 mt-2" data-topping="Friday: Loaded Wedges [$6.00]">+ $6.00</button>
+                                    </div>
                                 </div>
-                                <h5 class="mt-2">Monday: Macaroni and Cheese</h5>
-                                <button class="btn btn-primary add-to-order mt-2" data-topping="Monday: Macaroni and Cheese [$6.00]">+ $6.00</button>
-                            </div>
-                            <div class="col-md-4">
-                                <div class="square-image">
-                                    <img src="{{ url_for('static', filename='assets/img/sausage.jpg') }}" class="img-thumbnail" alt="Burritos">
-                                </div>
-                                <h5 class="mt-2">Tuesday: Burritos</h5>
-                                <button class="btn btn-primary add-to-order mt-2" data-topping="Tuesday: Burritos [$6.00]">+ $6.00</button>
-                            </div>
-                            <div class="col-md-4">
-                                <div class="square-image">
-                                    <img src="{{ url_for('static', filename='assets/img/burrito.jpg') }}" class="img-thumbnail" alt="Sushi">
-                                </div>
-                                <h5 class="mt-2">Wednesday: Sushi</h5>
-                                <h5 class="mt-2">Select: Chicken, Salmon, Veggie, Teriyaki and Onigiri</h5>
-                                <button class="btn btn-primary add-to-order mt-2" data-topping="Wednesday: Sushi (Chicken) [$6.00]">+ $6.00 (Chicken)</button>
-                                <button class="btn btn-primary add-to-order mt-2" data-topping="Wednesday: Sushi (Salmon) [$6.00]">+ $6.00 (Salmon)</button>
-                                <button class="btn btn-primary add-to-order mt-2" data-topping="Wednesday: Sushi (Veggie) [$6.00]">+ $6.00 (Veggie)</button>
-                                <button class="btn btn-primary add-to-order mt-2" data-topping="Wednesday: Sushi (Teriyaki) [$6.00]">+ $6.00 (Teriyaki)</button>
-                                <button class="btn btn-primary add-to-order mt-2" data-topping="Wednesday: Sushi (Onigiri) [$6.00]">+ $6.00 (Onigiri)</button>
-                            </div>
-                            <div class="col-md-4">
-                                <div class="square-image">
-                                    <img src="{{ url_for('static', filename='assets/img/burrito.jpg') }}" class="img-thumbnail" alt="Buttered Chicken">
-                                </div>
-                                <h5 class="mt-2">Thursday: Buttered Chicken</h5>
-                                <button class="btn btn-primary add-to-order mt-2" data-topping="Thursday: Buttered Chicken [$6.00]">+ $6.00</button>
-                            </div>
-                            <div class="col-md-4">
-                                <div class="square-image">
-                                    <img src="{{ url_for('static', filename='assets/img/burrito.jpg') }}" class="img-thumbnail" alt="Loaded Wedges">
-                                </div>
-                                <h5 class="mt-2">Friday: Loaded Wedges</h5>
-                                <button class="btn btn-primary add-to-order mt-2" data-topping="Friday: Loaded Wedges [$6.00]">+ $6.00</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- Hot Food Collapse Button -->
-                <button class="btn btn-secondary mb-3" type="button" data-bs-toggle="collapse" data-bs-target="#hotfoodCollapse" aria-expanded="false" aria-controls="hotfoodCollapse">
-                    Hot Food
-                </button>
-                <div class="collapse" id="hotfoodCollapse">
-                    <div class="card card-body">
-                        <div class="row">
-                            <div class="col-md-4">
-                                <div class="square-image">
-                                    <img src="{{ url_for('static', filename='assets/img/sandwich.jpg') }}" class="img-thumbnail" alt="Sandwich">
-                                </div>
-                                <button class="btn btn-primary add-to-order mt-2" data-topping="Sandwich">Add Sandwich</button>
-                            </div>
-                            <div class="col-md-4">
-                                <div class="square-image">
-                                    <img src="{{ url_for('static', filename='assets/img/sausage.jpg') }}" class="img-thumbnail" alt="Sausage">
-                                </div>
-                                <button class="btn btn-primary add-to-order mt-2" data-topping="Sausage">Add Sausage</button>
-                            </div>
-                            <div class="col-md-4">
-                                <div class="square-image">
-                                    <img src="{{ url_for('static', filename='assets/img/burrito.jpg') }}" class="img-thumbnail" alt="Burrito">
-                                </div>
-                                <button class="btn btn-primary add-to-order mt-2" data-topping="Burrito">Add Burrito</button>
                             </div>
                         </div>
                     </div>
-                </div>
-                <!-- Cold Food Collapse Button -->
-                <button class="btn btn-secondary mb-3" type="button" data-bs-toggle="collapse" data-bs-target="#coldfoodCollapse" aria-expanded="false" aria-controls="coldfoodCollapse">
-                    Cold Food
-                </button>
-                <div class="collapse" id="coldfoodCollapse">
-                    <div class="card card-body">
-                        <div class="row">
-                            <div class="col-md-4">
-                                <div class="square-image">
-                                    <img src="{{ url_for('static', filename='assets/img/sandwich.jpg') }}" class="img-thumbnail" alt="Sandwich">
+                    <!-- Hot Food -->
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingTwo">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#hotfoodCollapse" aria-expanded="true" aria-controls="hotfoodCollapse">
+                                Hot Food
+                            </button>
+                        </h2>
+                        <div id="hotfoodCollapse" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#foodAccordion">
+                            <div class="accordion-body">
+                                <div class="row">
+                                    <div class="col-md-4 mb-3">
+                                        <div class="square-image">
+                                            <img src="{{ url_for('static', filename='assets/img/sandwich.jpg') }}" class="img-thumbnail" alt="All Pies">
+                                        </div>
+                                        <h5 class="mt-2 text-center">All Pies</h5>
+                                        <button class="btn btn-primary add-to-order w-100 mt-2" data-topping="Pie: Potato Top [$5.00]">+ $5.00 (Potato Top)</button>
+                                        <button class="btn btn-primary add-to-order w-100 mt-2" data-topping="Pie: Mince & Cheese [$5.00]">+ $5.00 (Mince & Cheese)</button>
+                                        <button class="btn btn-primary add-to-order w-100 mt-2" data-topping="Pie: Steak [$5.00]">+ $5.00 (Steak)</button>
+                                        <button class="btn btn-primary add-to-order w-100 mt-2" data-topping="Pie: Steak & Cheese [$5.00]">+ $5.00 (Steak & Cheese)</button>
+                                    </div>
+                                    <div class="col-md-4 mb-3">
+                                        <div class="square-image">
+                                            <img src="{{ url_for('static', filename='assets/img/sausage.jpg') }}" class="img-thumbnail" alt="Ham & Cheese Toastie">
+                                        </div>
+                                        <h5 class="mt-2 text-center">Ham & Cheese Toastie</h5>
+                                        <button class="btn btn-primary add-to-order w-100 mt-2" data-topping="Ham & Cheese Toastie [$4.00]">+ $4.00</button>
+                                    </div>
+                                    <div class="col-md-4 mb-3">
+                                        <div class="square-image">
+                                            <img src="{{ url_for('static', filename='assets/img/burrito.jpg') }}" class="img-thumbnail" alt="Sausage Roll">
+                                        </div>
+                                        <h5 class="mt-2 text-center">Sausage Roll</h5>
+                                        <button class="btn btn-primary add-to-order w-100 mt-2" data-topping="Sausage Roll [$2.50]">+ $2.50</button>
+                                    </div>
+                                    <div class="col-md-4 mb-3">
+                                        <div class="square-image">
+                                            <img src="{{ url_for('static', filename='assets/img/burrito.jpg') }}" class="img-thumbnail" alt="Steamed Bun">
+                                        </div>
+                                        <h5 class="mt-2 text-center">Steamed Bun</h5>
+                                        <button class="btn btn-primary add-to-order w-100 mt-2" data-topping="Steamed Bun [$4.50]">+ $4.50</button>
+                                    </div>
+                                    <div class="col-md-4 mb-3">
+                                        <div class="square-image">
+                                            <img src="{{ url_for('static', filename='assets/img/burrito.jpg') }}" class="img-thumbnail" alt="Noodles">
+                                        </div>
+                                        <h5 class="mt-2 text-center">Noodles</h5>
+                                        <button class="btn btn-primary add-to-order w-100 mt-2" data-topping="Noodles [$4.00]">+ $4.00</button>
+                                    </div>
                                 </div>
-                                <button class="btn btn-primary add-to-order mt-2" data-topping="Sandwich">Add Sandwich</button>
-                            </div>
-                            <div class="col-md-4">
-                                <div class="square-image">
-                                    <img src="{{ url_for('static', filename='assets/img/sausage.jpg') }}" class="img-thumbnail" alt="Sausage">
-                                </div>
-                                <button class="btn btn-primary add-to-order mt-2" data-topping="Sausage">Add Sausage</button>
-                            </div>
-                            <div class="col-md-4">
-                                <div class="square-image">
-                                    <img src="{{ url_for('static', filename='assets/img/burrito.jpg') }}" class="img-thumbnail" alt="Burrito">
-                                </div>
-                                <button class="btn btn-primary add-to-order mt-2" data-topping="Burrito">Add Burrito</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- Drink Collapse Button -->
-                <button class="btn btn-secondary mb-3" type="button" data-bs-toggle="collapse" data-bs-target="#drinkCollapse" aria-expanded="false" aria-controls="drinkCollapse">
-                    Drink
-                </button>
-                <div class="collapse" id="drinkCollapse">
-                    <div class="card card-body">
-                        <div class="row">
-                            <div class="col-md-4">
-                                <div class="square-image">
-                                    <img src="{{ url_for('static', filename='assets/img/pepsi.png') }}" class="img-thumbnail" alt="Pepsi">
-                                </div>
-                                <button class="btn btn-primary add-to-order mt-2" data-topping="Pepsi">Add Pepsi</button>
-                            </div>
-                            <div class="col-md-4">
-                                <div class="square-image">
-                                    <img src="{{ url_for('static', filename='assets/img/water.jpg') }}" class="img-thumbnail" alt="Water">
-                                </div>
-                                <button class="btn btn-primary add-to-order mt-2" data-topping="Water">Add Water</button>
-                            </div>
-                            <div class="col-md-4">
-                                <div class="square-image">
-                                    <img src="{{ url_for('static', filename='assets/img/liptonicedtea.jpg') }}" class="img-thumbnail" alt="Lipton Iced Tea">
-                                </div>
-                                <button class="btn btn-primary add-to-order mt-2" data-topping="Lipton Iced Tea">Add Lipton Iced Tea</button>
                             </div>
                         </div>
                     </div>
@@ -179,11 +152,11 @@
             </div>
             <!-- Cart Section -->
             <div class="col-md-4">
-                <h1 class="section-title">Your Order</h1>
+                <h1 class="section-title"><span>C</span>art</h1>
                 <ul class="list-group" id="cart">
                     <!-- Added -->
                 </ul>
-                <button class="btn btn-success mt-3" id="place-order">Place Order</button>
+                <button class="btn btn-success mt-3 w-100" id="place-order">Place Order</button>
             </div>
         </div>
     </div>

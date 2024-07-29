@@ -1,0 +1,23 @@
+{% extends "template.html" %} {% block title %}Payment Option{% endblock %}
+
+{% block content %}
+<section id="paymentoption">
+    <div class="container text-center mt-5">
+        <h1 class="section-title">How would you like to pay?</h1>
+        <div class="button-container mt-5">
+            <button class="btn btn-cash btn-lg mx-3" onclick="window.location.href='{{ url_for('views.cash_payment', order=request.args.get('order')) }}'">Cash</button>
+            <button class="btn btn-card btn-lg mx-3" onclick="window.location.href='{{ url_for('views.card_payment', order=request.args.get('order')) }}'">Card</button>
+        </div>
+    </div>
+</section>
+
+<script>
+    document.getElementById('cashOption').addEventListener('click', function () {
+        window.location.href = "{{ url_for('views.cash_payment') }}";
+    });
+
+    document.getElementById('cardOption').addEventListener('click', function () {
+        window.location.href = "{{ url_for('views.card_payment') }}";
+    });
+</script>
+{% endblock %}

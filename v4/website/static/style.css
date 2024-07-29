@@ -12,7 +12,7 @@ body {
 }
 
 /* Colour
-rgb(78, 132, 228), rgb(112, 158, 242)
+rgb(58, 115, 214), rgb(112, 158, 242)
 */
 
 /* Login and Signup */
@@ -79,7 +79,8 @@ rgb(78, 132, 228), rgb(112, 158, 242)
 }
 /* Login and Signup End */
 
-/* Ordering Section */
+/* Ordering */
+/* General Styling */
 .square-image {
     width: 100%;
     padding-top: 100%;
@@ -94,7 +95,110 @@ rgb(78, 132, 228), rgb(112, 158, 242)
     height: 100%;
     object-fit: cover;
 }
-/* End Ordering Section */
+
+/* Button Styling */
+.accordion-button {
+    background-color: rgb(58, 115, 214);
+    color: white;
+    font-weight: bold;
+}
+
+.accordion-button:not(.collapsed) {
+    color: white;
+    background-color: rgb(58, 115, 214);
+}
+
+.btn-primary {
+    background-color: rgb(112, 158, 242);
+    border-color: rgb(58, 115, 214);
+}
+
+#foodlist .btn-primary:hover {
+    background-color: rgb(58, 115, 214);
+    border-color: rgb(58, 115, 214);
+}
+
+#foodlist #mealofthedayCollapse .accordion-item {
+	position: relative;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin: 10px 0;
+	flex-wrap: wrap;
+	width: 1000px;
+}
+
+/* Text Alignment */
+.text-center {
+    text-align: center;
+}
+
+/* Full Width Button */
+.w-100 {
+    width: 100%;
+}
+
+/* Prevent white spaces */
+.accordion-collapse {
+    overflow: hidden;
+}
+
+/* Maintain responsive container */
+.fixed-width-container {
+    width: 100%;
+}
+
+/* Aligning accordion item content */
+.accordion-item {
+    width: 100%;
+}
+
+/* Ensure min-height for alignment */
+.accordion-item .accordion-body {
+    min-height: 300px;
+}
+
+/* Prevent squishing */
+.container {
+    max-width: 100%;
+}
+/* End Ordering */
+
+/* Payment Option Section */
+/* Button Styles */
+.btn-lg {
+    font-size: 1.5rem;
+    padding: 15px 30px;
+}
+
+.btn-cash {
+    background-color: rgb(112, 158, 242);
+    border-color: rgb(112, 158, 242);
+}
+
+.btn-card {
+    background-color: rgb(78, 132, 228);
+    border-color: rgb(78, 132, 228);
+}
+
+#paymentoption .btn-cash:hover {
+    background-color: rgb(222, 52, 235);
+    border-color: rgb(222, 52, 235);
+}
+
+#paymentoption .btn-card:hover {
+    background-color: rgb(222, 52, 235);
+    border-color: rgb(222, 52, 235);
+}
+
+/* Centering the Buttons */
+.button-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+/* End Payment Option Section */
+
 
 /* Footer Section */
 footer
@@ -272,14 +376,14 @@ p {
 .section-title {
 	font-size: 4rem;
 	font-weight: 300;
-	color: rgb(40, 216, 90);
+	color: rgb(112, 158, 242);
 	margin-bottom: 20px;
 	text-transform: uppercase;
 	letter-spacing: 0.2rem;
 	text-align: center;
 }
 .section-title span {
-	color: rgb(208, 182, 34);
+	color: rgb(58, 115, 214);
 }
 
 
@@ -1422,6 +1526,10 @@ End Skin Types Info Section */
 	h1.section-title {
 		font-size: 6rem;
 	}
+
+	/* Order Section */
+
+	/* End Order Section */
 
 	/* Blogs Section */
 	#blogs .blogs-bottom .blogs-item {
