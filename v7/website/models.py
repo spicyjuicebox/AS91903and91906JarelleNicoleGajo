@@ -48,4 +48,4 @@ class Order(db.Model):
     user_email = db.Column(db.String(150))
     date_created = db.Column(db.DateTime(timezone=True), default=func.now())
     payment_method = db.Column(db.String(50), nullable=False)
-    total_price = db.Column(db.Float, nullable=False)
+    pricetopay = db.Column(db.Float, nullable=False)
