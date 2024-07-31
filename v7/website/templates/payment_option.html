@@ -5,8 +5,8 @@
     <div class="container text-center mt-5">
         <h1 class="section-title">How would you like to pay?</h1>
         <div class="button-container mt-5">
-            <button class="btn btn-cash btn-lg mx-3" onclick="window.location.href='{{ url_for('views.cash_payment', order=request.args.get('order')) }}'">Cash</button>
-            <button class="btn btn-card btn-lg mx-3" onclick="window.location.href='{{ url_for('views.card_payment', order=request.args.get('order')) }}'">Card</button>
+            <button class="btn btn-cash btn-lg mx-3" onclick="window.location.href='{{ url_for('views.cash_payment', order=request.args.get('order'), total=request.args.get('total')) }}'">Cash</button>
+            <button class="btn btn-card btn-lg mx-3" onclick="window.location.href='{{ url_for('views.card_payment', order=request.args.get('order'), total=request.args.get('total')) }}'">Card</button>
         </div>
     </div>
 </section>

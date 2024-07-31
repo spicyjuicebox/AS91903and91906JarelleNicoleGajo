@@ -47,7 +47,7 @@ def cash_payment():
     if not order or not total:
         flash('No order found.', category='error')
         return redirect(url_for('views.menu'))
-    new_order = Order(items=order, user_id=current_user.id, user_email=current_user.email, payment_method='Cash', pricetopay=total)
+    new_order = Order(items=order, user_id=current_user.id, user_email=current_user.email, payment_method='Cash', total_price=total)
     db.session.add(new_order)
     db.session.commit()
     return render_template('cash_payment.html', user=current_user, order=order, total=total)
@@ -60,6 +60,9 @@ def card_payment():
     if not order or not total:
         flash('No order found.', category='error')
         return redirect(url_for('views.menu'))
+    new_order = Order(items=order, user_id=current_user.id, user_email=current_user.email, payment_method='Card', total_price=total)
+    db.session.add(new_order)
+    db.session.commit()
     return render_template('card_payment.html', user=current_user, order=order, total=total)
 
 @views.route('/process_card_payment', methods=['POST'])
@@ -67,7 +70,7 @@ def card_payment():
 def process_card_payment():
     order = request.form.get('order')
     total = request.form.get('total')
-    new_order = Order(items=order, user_id=current_user.id, user_email=current_user.email, payment_method='Card', pricetopay=total)
+    new_order = Order(items=order, user_id=current_user.id, user_email=current_user.email, payment_method='Card', total_price=total)
     db.session.add(new_order)
     db.session.commit()
     return redirect(url_for('views.thank_you'))
