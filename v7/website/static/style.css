@@ -141,15 +141,13 @@ rgb(58, 115, 214), rgb(112, 158, 242)
 
 #foodlist .btn-primary {
     background-color: rgb(112, 158, 242);
-    border-color: rgb(58, 115, 214);
 }
 
 #foodlist .btn-primary:hover {
     background-color: rgb(58, 115, 214);
-    border-color: rgb(58, 115, 214);
 }
 
-/* Update during order page. */
+/* Update during order page, for Post page. */
 #createapostbutton .btn-primary {
 	background-color: yellow;
 	border-color: red;
