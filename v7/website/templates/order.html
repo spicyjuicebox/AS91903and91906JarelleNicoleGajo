@@ -199,6 +199,258 @@
                             </div>
                         </div>
                     </div>
+                    <!-- Sandwiches -->
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingThree">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#sandwichesCollapse" aria-expanded="true" aria-controls="sandwichesCollapse">
+                                Sandwiches
+                            </button>
+                        </h2>
+                        <div id="sandwichesCollapse" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#foodAccordion">
+                            <div class="accordion-body">
+                                <div class="row">
+                                    <div class="col-md-4 mb-3">
+                                        <div class="square-image">
+                                            <img src="{{ url_for('static', filename='assets/img/sandwich.jpg') }}" class="img-thumbnail" alt="Pizza Bread">
+                                        </div>
+                                        <h5 class="mt-2 text-center">Pizza Bread</h5>
+                                        <button class="btn btn-primary add-to-order mt-2" data-topping="Pizza Bread [$3.50]" data-price="3.50">+ $3.50</button>
+                                    </div>
+                                    <div class="col-md-4 mb-3">
+                                        <div class="square-image">
+                                            <img src="{{ url_for('static', filename='assets/img/sausage.jpg') }}" class="img-thumbnail" alt="Ham & Egg">
+                                        </div>
+                                        <h5 class="mt-2 text-center">Ham & Egg</h5>
+                                        <button class="btn btn-primary add-to-order mt-2" data-topping="Ham & Egg [$4.50]" data-price="4.50">+ $4.50</button>
+                                    </div>
+                                    <div class="col-md-4 mb-3">
+                                        <div class="square-image">
+                                            <img src="{{ url_for('static', filename='assets/img/burrito.jpg') }}" class="img-thumbnail" alt="Egg">
+                                        </div>
+                                        <h5 class="mt-2 text-center">Egg</h5>
+                                        <button class="btn btn-primary add-to-order mt-2" data-topping="Egg [$4.00]" data-price="4.00">+ $4.00</button>
+                                    </div>
+                                    <div class="col-md-4 mb-3">
+                                        <div class="square-image">
+                                            <img src="{{ url_for('static', filename='assets/img/burrito.jpg') }}" class="img-thumbnail" alt="Ham & Cheese">
+                                        </div>
+                                        <h5 class="mt-2 text-center">Ham & Cheese</h5>
+                                        <button class="btn btn-primary add-to-order mt-2" data-topping="Ham & Cheese [$4.50]" data-price="4.50">+ $4.50</button>
+                                    </div>
+                                    <div class="col-md-4 mb-3">
+                                        <div class="square-image">
+                                            <img src="{{ url_for('static', filename='assets/img/burrito.jpg') }}" class="img-thumbnail" alt="Chicken & Mayo">
+                                        </div>
+                                        <h5 class="mt-2 text-center">Chicken & Mayo</h5>
+                                        <button class="btn btn-primary add-to-order mt-2" data-topping="Chicken & Mayo [$5.00]" data-price="5.00">+ $5.00</button>
+                                    </div>
+                                    <div class="col-md-4 mb-3">
+                                        <div class="square-image">
+                                            <img src="{{ url_for('static', filename='assets/img/burrito.jpg') }}" class="img-thumbnail" alt="Bacon & Egg">
+                                        </div>
+                                        <h5 class="mt-2 text-center">Bacon & Egg</h5>
+                                        <button class="btn btn-primary add-to-order mt-2" data-topping="Bacon & Egg [$5.00]" data-price="5.00">+ $5.00</button>
+                                    </div>
+                                    <div class="col-md-4 mb-3">
+                                        <div class="square-image">
+                                            <img src="{{ url_for('static', filename='assets/img/sandwich.jpg') }}" class="img-thumbnail" alt="Chicken Salad Sub">
+                                        </div>
+                                        <h5 class="mt-2 text-center">Chicken Salad Sub</h5>
+                                        <button class="btn btn-primary add-to-order mt-2" data-topping="Chicken Salad Sub [$5.00]" data-price="5.00">+ $5.00</button>
+                                    </div>
+                                    <div class="col-md-4 mb-3">
+                                        <div class="square-image">
+                                            <img src="{{ url_for('static', filename='assets/img/burrito.jpg') }}" class="img-thumbnail" alt="Chicken & Salad">
+                                        </div>
+                                        <h5 class="mt-2 text-center">Chicken & Salad</h5>
+                                        <button class="btn btn-primary add-to-order mt-2" data-topping="Chicken & Salad [$6.00]" data-price="6.00">+ $6.00</button>
+                                    </div>
+                                    <div class="col-md-4 mb-3">
+                                        <div class="square-image">
+                                            <img src="{{ url_for('static', filename='assets/img/burrito.jpg') }}" class="img-thumbnail" alt="Ham & Salad">
+                                        </div>
+                                        <h5 class="mt-2 text-center">Ham & Salad</h5>
+                                        <button class="btn btn-primary add-to-order mt-2" data-topping="Ham & Salad [$6.00]" data-price="6.00">+ $6.00</button>
+                                    </div>
+                                    <div class="col-md-4 mb-3">
+                                        <div class="square-image">
+                                            <img src="{{ url_for('static', filename='assets/img/burrito.jpg') }}" class="img-thumbnail" alt="Chicken & Salad Wrap">
+                                        </div>
+                                        <h5 class="mt-2 text-center">Chicken & Salad Wrap</h5>
+                                        <button class="btn btn-primary add-to-order mt-2" data-topping="Chicken & Salad Wrap [$6.00]" data-price="6.00">+ $6.00</button>
+                                    </div>
+                                    <div class="col-md-4 mb-3">
+                                        <div class="square-image">
+                                            <img src="{{ url_for('static', filename='assets/img/burrito.jpg') }}" class="img-thumbnail" alt="Ham & Salad Wrap">
+                                        </div>
+                                        <h5 class="mt-2 text-center">Ham & Salad Wrap</h5>
+                                        <button class="btn btn-primary add-to-order mt-2" data-topping="Ham & Salad Wrap [$6.00]" data-price="6.00">+ $6.00</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Snacks -->
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingFour">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#snacksCollapse" aria-expanded="true" aria-controls="snacksCollapse">
+                                Snacks
+                            </button>
+                        </h2>
+                        <div id="snacksCollapse" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#foodAccordion">
+                            <div class="accordion-body">
+                                <div class="row">
+                                    <div class="col-md-4 mb-3">
+                                        <div class="square-image">
+                                            <img src="{{ url_for('static', filename='assets/img/sandwich.jpg') }}" class="img-thumbnail" alt="Chips">
+                                        </div>
+                                        <h5 class="mt-2 text-center">Chips</h5>
+                                        <button class="btn btn-primary add-to-order mt-2" data-topping="Chips [$2.50]" data-price="2.50">+ $2.50</button>
+                                    </div>
+                                    <div class="col-md-4 mb-3">
+                                        <div class="square-image">
+                                            <img src="{{ url_for('static', filename='assets/img/sausage.jpg') }}" class="img-thumbnail" alt="Donuts">
+                                        </div>
+                                        <h5 class="mt-2 text-center">Donuts</h5>
+                                        <button class="btn btn-primary add-to-order mt-2" data-topping="Donuts [$3.50]" data-price="3.50">+ $3.50</button>
+                                    </div>
+                                    <div class="col-md-4 mb-3">
+                                        <div class="square-image">
+                                            <img src="{{ url_for('static', filename='assets/img/burrito.jpg') }}" class="img-thumbnail" alt="Mrs Higgins Brownie">
+                                        </div>
+                                        <h5 class="mt-2 text-center">Mrs Higgins Brownie</h5>
+                                        <button class="btn btn-primary add-to-order mt-2" data-topping="Mrs Higgins Brownie [$4.00]" data-price="4.00">+ $4.00</button>
+                                    </div>
+                                    <div class="col-md-4 mb-3">
+                                        <div class="square-image">
+                                            <img src="{{ url_for('static', filename='assets/img/burrito.jpg') }}" class="img-thumbnail" alt="Mrs Higgins Cookies">
+                                        </div>
+                                        <h5 class="mt-2 text-center">Mrs Higgins Cookies</h5>
+                                        <button class="btn btn-primary add-to-order mt-2" data-topping="Mrs Higgins Cookies [$4.00]" data-price="4.00">+ $4.00</button>
+                                    </div>
+                                    <div class="col-md-4 mb-3">
+                                        <div class="square-image">
+                                            <img src="{{ url_for('static', filename='assets/img/burrito.jpg') }}" class="img-thumbnail" alt="Homemade Slice">
+                                        </div>
+                                        <h5 class="mt-2 text-center">Homemade Slice</h5>
+                                        <button class="btn btn-primary add-to-order mt-2" data-topping="Homemade Slice [$3.00]" data-price="3.00">+ $3.00</button>
+                                    </div>
+                                    <div class="col-md-4 mb-3">
+                                        <div class="square-image">
+                                            <img src="{{ url_for('static', filename='assets/img/burrito.jpg') }}" class="img-thumbnail" alt="Muffin">
+                                        </div>
+                                        <h5 class="mt-2 text-center">Muffin</h5>
+                                        <button class="btn btn-primary add-to-order mt-2" data-topping="Muffin [$3.00]" data-price="3.00">+ $3.00</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Frozen -->
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingFive">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#frozenCollapse" aria-expanded="true" aria-controls="frozenCollapse">
+                                Frozen
+                            </button>
+                        </h2>
+                        <div id="frozenCollapse" class="accordion-collapse collapse" aria-labelledby="headingFive" data-bs-parent="#foodAccordion">
+                            <div class="accordion-body">
+                                <div class="row">
+                                    <div class="col-md-4 mb-3">
+                                        <div class="square-image">
+                                            <img src="{{ url_for('static', filename='assets/img/sandwich.jpg') }}" class="img-thumbnail" alt="Slushy (Sugar Free)">
+                                        </div>
+                                        <h5 class="mt-2 text-center">Slushy (Sugar Free)</h5>
+                                        <button class="btn btn-primary add-to-order mt-2" data-topping="Slushy (Sugar Free) [$3.50]" data-price="3.50">+ $3.50</button>
+                                    </div>
+                                    <div class="col-md-4 mb-3">
+                                        <div class="square-image">
+                                            <img src="{{ url_for('static', filename='assets/img/sausage.jpg') }}" class="img-thumbnail" alt="Juicies">
+                                        </div>
+                                        <h5 class="mt-2 text-center">Juicies</h5>
+                                        <button class="btn btn-primary add-to-order mt-2" data-topping="Juicies [$2.50]" data-price="2.50">+ $2.50</button>
+                                    </div>
+                                    <div class="col-md-4 mb-3">
+                                        <div class="square-image">
+                                            <img src="{{ url_for('static', filename='assets/img/burrito.jpg') }}" class="img-thumbnail" alt="Moosies">
+                                        </div>
+                                        <h5 class="mt-2 text-center">Moosies</h5>
+                                        <button class="btn btn-primary add-to-order mt-2" data-topping="Moosies [$2.50]" data-price="2.50">+ $2.50</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Drinks -->
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingSix">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#drinksCollapse" aria-expanded="true" aria-controls="drinksCollapse">
+                                Drinks
+                            </button>
+                        </h2>
+                        <div id="drinksCollapse" class="accordion-collapse collapse" aria-labelledby="headingSix" data-bs-parent="#foodAccordion">
+                            <div class="accordion-body">
+                                <div class="row">
+                                    <div class="col-md-4 mb-3">
+                                        <div class="square-image">
+                                            <img src="{{ url_for('static', filename='assets/img/sandwich.jpg') }}" class="img-thumbnail" alt="Powerade (No Sugar)">
+                                        </div>
+                                        <h5 class="mt-2 text-center">Powerade (No Sugar)</h5>
+                                        <button class="btn btn-primary add-to-order mt-2" data-topping="Powerade (No Sugar) [$5.00]" data-price="5.00">+ $5.00</button>
+                                    </div>
+                                    <div class="col-md-4 mb-3">
+                                        <div class="square-image">
+                                            <img src="{{ url_for('static', filename='assets/img/sausage.jpg') }}" class="img-thumbnail" alt="Aqa Can">
+                                        </div>
+                                        <h5 class="mt-2 text-center">Aqa Can</h5>
+                                        <button class="btn btn-primary add-to-order mt-2" data-topping="Aqa Can [$3.00]" data-price="3.00">+ $3.00</button>
+                                    </div>
+                                    <div class="col-md-4 mb-3">
+                                        <div class="square-image">
+                                            <img src="{{ url_for('static', filename='assets/img/burrito.jpg') }}" class="img-thumbnail" alt="Keri Juice">
+                                        </div>
+                                        <h5 class="mt-2 text-center">Keri Juice</h5>
+                                        <button class="btn btn-primary add-to-order mt-2" data-topping="Keri Juice [$4.00]" data-price="4.00">+ $4.00</button>
+                                    </div>
+                                    <div class="col-md-4 mb-3">
+                                        <div class="square-image">
+                                            <img src="{{ url_for('static', filename='assets/img/burrito.jpg') }}" class="img-thumbnail" alt="Aloe Vera">
+                                        </div>
+                                        <h5 class="mt-2 text-center">Aloe Vera</h5>
+                                        <button class="btn btn-primary add-to-order mt-2" data-topping="Aloe Vera [$4.50]" data-price="4.50">+ $4.50</button>
+                                    </div>
+                                    <div class="col-md-4 mb-3">
+                                        <div class="square-image">
+                                            <img src="{{ url_for('static', filename='assets/img/burrito.jpg') }}" class="img-thumbnail" alt="Vitamin Water">
+                                        </div>
+                                        <h5 class="mt-2 text-center">Vitamin Water</h5>
+                                        <button class="btn btn-primary add-to-order mt-2" data-topping="Vitamin Water [$4.50]" data-price="4.50">+ $4.50</button>
+                                    </div>
+                                    <div class="col-md-4 mb-3">
+                                        <div class="square-image">
+                                            <img src="{{ url_for('static', filename='assets/img/burrito.jpg') }}" class="img-thumbnail" alt="Water - Small">
+                                        </div>
+                                        <h5 class="mt-2 text-center">Water - Small</h5>
+                                        <button class="btn btn-primary add-to-order mt-2" data-topping="Water - Small [$2.00]" data-price="2.00">+ $2.00</button>
+                                    </div>
+                                    <div class="col-md-4 mb-3">
+                                        <div class="square-image">
+                                            <img src="{{ url_for('static', filename='assets/img/burrito.jpg') }}" class="img-thumbnail" alt="Water - Large">
+                                        </div>
+                                        <h5 class="mt-2 text-center">Water - Large</h5>
+                                        <button class="btn btn-primary add-to-order mt-2" data-topping="Water - Large [$4.00]" data-price="4.00">+ $4.00</button>
+                                    </div>
+                                    <div class="col-md-4 mb-3">
+                                        <div class="square-image">
+                                            <img src="{{ url_for('static', filename='assets/img/burrito.jpg') }}" class="img-thumbnail" alt="Iced Tea">
+                                        </div>
+                                        <h5 class="mt-2 text-center">Iced Tea</h5>
+                                        <button class="btn btn-primary add-to-order mt-2" data-topping="Iced Tea [$5.00]" data-price="5.00">+ $5.00</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
             <!-- Cart Section -->
