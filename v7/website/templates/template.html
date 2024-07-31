@@ -22,7 +22,7 @@
         <div class="header container">
           <div class="nav-bar">
             <div class="brand">
-              <a href="#">
+              <a href="/home">
                 <h1><span>SMC </span>Tuckshop<span></span></h1>
               </a>
             </div>
@@ -33,7 +33,7 @@
               <ul>
                 {% if user.is_authenticated %}
                   <li class="nav-item">
-                    <a class="nav-link" href="/home">Homepage</a>
+                    <a class="nav-link" href="/home">Home</a>
                   </li>
                   <li class="nav-item">
                     <a class="nav-link" href="/blog">Blog</a>
@@ -60,7 +60,6 @@
           </div>
         </div>
       </section>
-      <script src="{{ url_for('static', filename='app.js') }}"></script>
       <!-- End Header -->
   </header>
 
