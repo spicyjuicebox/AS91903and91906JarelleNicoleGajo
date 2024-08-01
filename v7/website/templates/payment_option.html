@@ -1,7 +1,40 @@
 {% extends "template.html" %} {% block title %}Payment Option{% endblock %}
 
 {% block content %}
+<!-- Routines Section -->
+<section id="routines">
+    <div class="routines container">
+      <div class="routines-top">
+        <h1 class="section-title">How would you like to <span>Pay</span>?</h1>
+        <p>Please choose if you would like to pay with <span>CASH</span> or <span>CARD</span>.</p>
+      </div>
+      <div class="routines-bottom">
+        <div class="routines-item">
+          <div class="icon"><img src="{{ url_for('static', filename='assets/img/cash.png') }}" alt="Cash Icon"></div>
+          <h2>Cash Option</h2>
+          <p>By choosing the cash option, you are to pay for your order with cash during collection.</p>
+          <button class="btn btn-cash btn-lg mx-3" onclick="window.location.href='{{ url_for('views.cash_payment', order=request.args.get('order'), total=request.args.get('total')) }}'">Cash</button>
+        </div>
+        <div class="routines-item2">
+          <div class="icon"><img src="{{ url_for('static', filename='assets/img/card.png') }}" alt="Card Icon"></div>
+          <h2>Card Option</h2>
+          <p>By choosing the card option, you are to pay for your order on this site.</p>
+          <button class="btn btn-card btn-lg mx-3" onclick="window.location.href='{{ url_for('views.card_payment', order=request.args.get('order'), total=request.args.get('total')) }}'">Card</button>
+        </div>
+      </div>
+    </div>
+</section>
+<!-- End Routines Section -->
+
+<!-- Payment Option Section -->
 <section id="paymentoption">
+    <div class="blogs container">
+        <div class="blogs-top">
+            <h1 class="section-title">How would you like to <span>Pay</span>?</h1>
+            <p>Please choose if you would like to pay with CASH or CARD.</p>
+        </div>
+    </div>
+    
     <div class="container text-center mt-5">
         <h1 class="section-title">How would you like to pay?</h1>
         <div class="button-container mt-5">
