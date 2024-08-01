@@ -616,7 +616,7 @@ p {
 
 #header2 .header {
 	min-height: 8vh;
-	background-color: yellow;
+	background-color: rgb(28, 74, 154);
 	transition: 0.3s ease background-color;
 	border-radius: 10px;
 }
@@ -1696,7 +1696,7 @@ End Skin Types Info Section */
 		display: block;
 		height: auto;
 		width: fit-content;
-		background-color: yellow;
+		background-color: rgb(28, 74, 154);
 	}
 	#header2 .nav-list ul li {
 		display: inline-block;
