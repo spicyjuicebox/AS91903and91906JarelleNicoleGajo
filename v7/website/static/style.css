@@ -207,22 +207,26 @@ rgb(58, 115, 214), rgb(112, 158, 242)
 .btn-cash {
     background-color: rgb(78, 132, 228);
     border-color: rgb(78, 132, 228);
+	color: white;
 }
 
 .btn-card {
     background-color: rgb(78, 132, 228);
     border-color: rgb(78, 132, 228);
+	color: white;
 }
 
 /* Change from routines to paymentoption (section id). */
 #routines .btn-cash:hover {
-    background-color: rgb(222, 52, 235);
-    border-color: rgb(222, 52, 235);
+    background-color: rgb(34, 95, 208);
+    border-color: rgb(34, 95, 208);
+	color: white;
 }
 
 #routines .btn-card:hover {
-    background-color: rgb(222, 52, 235);
-    border-color: rgb(222, 52, 235);
+    background-color: rgb(34, 95, 208);
+    border-color: rgb(34, 95, 208);
+	color: white;
 }
 
 /* Centering the Buttons */
