@@ -214,12 +214,13 @@ rgb(58, 115, 214), rgb(112, 158, 242)
     border-color: rgb(78, 132, 228);
 }
 
-#paymentoption .btn-cash:hover {
+/* Change from routines to paymentoption (section id). */
+#routines .btn-cash:hover {
     background-color: rgb(222, 52, 235);
     border-color: rgb(222, 52, 235);
 }
 
-#paymentoption .btn-card:hover {
+#routines .btn-card:hover {
     background-color: rgb(222, 52, 235);
     border-color: rgb(222, 52, 235);
 }
