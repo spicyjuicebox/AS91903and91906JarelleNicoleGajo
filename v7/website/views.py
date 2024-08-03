@@ -50,7 +50,7 @@ def cash_payment():
     new_order = Order(items=order, user_id=current_user.id, user_email=current_user.email, payment_method='Cash', total_price=total)
     db.session.add(new_order)
     db.session.commit()
-    return render_template('cash_payment.html', user=current_user, order=order, total=total)
+    return render_template('cash_payment.html', user=current_user, order=order, total=total, total_price=total)
 
 @views.route('/card_payment', methods=['GET', 'POST'])
 @login_required

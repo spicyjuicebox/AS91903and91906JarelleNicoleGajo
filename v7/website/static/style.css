@@ -232,19 +232,34 @@ rgb(58, 115, 214), rgb(112, 158, 242)
 }
 
 /* Cash Payment Section */
-.btn-success {
+#blogs .blogs-top .btn-success {
 	background-color: rgb(78, 132, 228);
 	border-color: rgb(78, 132, 228);
 	color: white;
 	box-shadow: 0px 5px 18px 0 rgb(78, 132, 228);
 }
 
-#blogs .btn-success:hover {
+#blogs .blogs-top .btn-success:hover {
 	background-color: rgb(34, 95, 208);
 	border-color: rgb(34, 95, 208);
 	color: white;
 }
 /* End Cash Payment Section */
+
+/* Order Section */
+#foodlist .btn-success {
+	background-color: rgb(40, 167, 69);
+	border-color: rgb(40, 167, 69);
+	color: white;
+	box-shadow: 0px 5px 18px 0 rgb(40, 167, 69);
+}
+
+#foodlist .btn-success:hover {
+	background-color: rgb(22, 142, 52);
+	border-color: rgb(22, 142, 52);
+	color: white;
+}
+/* End Order Section */
 
 
 /* Centering the Buttons */
