@@ -614,14 +614,14 @@ p {
 	text-decoration: none;
 }
 
-#header2 .header {
+#header2 .header2 {
 	min-height: 8vh;
 	background-color: rgb(28, 74, 154);
 	transition: 0.3s ease background-color;
 	border-radius: 10px;
 }
 
-#header2 .nav-bar {
+#header2 .nav-bar2 {
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
@@ -631,7 +631,7 @@ p {
 	padding: 0 10px;
 }
 
-#header2 .nav-list ul {
+#header2 .nav-list2 ul {
 	list-style: none;
 	position: absolute;
 	background-color: rgb(28, 74, 154); /*Background colour for hamburger.*/
@@ -649,11 +649,11 @@ p {
 	transition: 0.5s ease left;
 }
 
-#header2 .nav-list ul.active {
+#header2 .nav-list2 ul.active {
 	left: 0%;
 }
 
-#header2 .nav-list ul a {
+#header2 .nav-list2 ul a {
 	font-size: 2.5rem;
 	font-weight: 500;
 	letter-spacing: 0.2rem;
@@ -665,7 +665,7 @@ p {
 	display: block;
 }
 
-#header2 .nav-list ul a::after {
+#header2 .nav-list2 ul a::after {
 	content: attr(data-after);
 	position: absolute;
 	top: 50%;
@@ -679,18 +679,18 @@ p {
 	transition: 0.3s ease letter-spacing;
 }
 
-#header2 .nav-list ul li:hover a::after {
+#header2 .nav-list2 ul li:hover a::after {
 	transform: translate(-50%, -50%) scale(1);
 	letter-spacing: initial;
 }
 
-#header2 .nav-list ul li:hover a {
+#header2 .nav-list2 ul li:hover a {
 	color: rgb(112, 158, 242);
     transition: 0.3s ease;
 	text-decoration: none;
 }
 
-#header2 .hamburger {
+#header2 .hamburger2 {
 	height: 60px;
 	width: 60px;
 	display: inline-block;
@@ -706,7 +706,7 @@ p {
 	margin-right: 20px;
 }
 
-#header2 .hamburger:after {
+#header2 .hamburger2:after {
 	position: absolute;
 	content: '';
 	height: 100%;
@@ -716,7 +716,7 @@ p {
 	animation: hamburger_puls 1s ease infinite;
 }
 
-#header2 .hamburger .bar {
+#header2 .hamburger2 .bar {
 	height: 2px;
 	width: 30px;
 	position: relative;
@@ -724,8 +724,8 @@ p {
 	z-index: -1;
 }
 
-#header2 .hamburger .bar::after,
-#header2 .hamburger .bar::before {
+#header2 .hamburger2 .bar::after,
+#header2 .hamburger2 .bar::before {
 	content: '';
 	position: absolute;
 	height: 100%;
@@ -736,19 +736,19 @@ p {
 	transition-property: top, bottom;
 }
 
-#header2 .hamburger .bar::after {
+#header2 .hamburger2 .bar::after {
 	top: 8px;
 }
 
-#header2 .hamburger .bar::before {
+#header2 .hamburger2 .bar::before {
 	bottom: 8px;
 }
 
-#header2 .hamburger.active .bar::before {
+#header2 .hamburger2.active .bar::before {
 	bottom: 0;
 }
 
-#header2 .hamburger.active .bar::after {
+#header2 .hamburger2.active .bar::after {
 	top: 0;
 }
 /* End Navigation Section 2 */
@@ -1688,23 +1688,23 @@ End Skin Types Info Section */
 	/* End Header Section */
 
 	/* Header Section 2 */
-	#header2 .hamburger {
+	#header2 .hamburger2 {
 		display: none;
 	}
-	#header2 .nav-list ul {
+	#header2 .nav-list2 ul {
 		position: initial;
 		display: block;
 		height: auto;
 		width: fit-content;
 		background-color: rgb(28, 74, 154);
 	}
-	#header2 .nav-list ul li {
+	#header2 .nav-list2 ul li {
 		display: inline-block;
 	}
-	#header2 .nav-list ul li a {
+	#header2 .nav-list2 ul li a {
 		font-size: 1.8rem;
 	}
-	#header2 .nav-list ul a:after {
+	#header2 .nav-list2 ul a:after {
 		display: none;
 	}
 	/* End Header Section 2 */
