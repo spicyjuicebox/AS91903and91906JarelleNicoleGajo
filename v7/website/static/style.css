@@ -208,12 +208,14 @@ rgb(58, 115, 214), rgb(112, 158, 242)
     background-color: rgb(78, 132, 228);
     border-color: rgb(78, 132, 228);
 	color: white;
+	box-shadow: 0px 5px 18px 0 rgb(78, 132, 228);
 }
 
 .btn-card {
     background-color: rgb(78, 132, 228);
     border-color: rgb(78, 132, 228);
 	color: white;
+	box-shadow: 0px 5px 18px 0 rgb(78, 132, 228);
 }
 
 /* Change from routines to paymentoption (section id). */
@@ -228,6 +230,22 @@ rgb(58, 115, 214), rgb(112, 158, 242)
     border-color: rgb(34, 95, 208);
 	color: white;
 }
+
+/* Cash Payment Section */
+.btn-success {
+	background-color: rgb(78, 132, 228);
+	border-color: rgb(78, 132, 228);
+	color: white;
+	box-shadow: 0px 5px 18px 0 rgb(78, 132, 228);
+}
+
+#blogs .btn-success:hover {
+	background-color: rgb(34, 95, 208);
+	border-color: rgb(34, 95, 208);
+	color: white;
+}
+/* End Cash Payment Section */
+
 
 /* Centering the Buttons */
 .button-container {
