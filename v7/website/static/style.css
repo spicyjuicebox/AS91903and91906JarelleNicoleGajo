@@ -1232,7 +1232,7 @@ p {
 	flex-direction: column;
 	padding: 30px;
 	border-radius: 10px;
-	background-image: url(./images/morningimg.jpg);
+	background-image: url(assets/img/simpleblue.jpg);
 	background-size: cover;
 	margin: 10px 5%;
 	position: relative;
@@ -1281,7 +1281,7 @@ p {
 	flex-direction: column;
 	padding: 30px;
 	border-radius: 10px;
-	background-image: url(./images/nighttimeimg.jpg);
+	background-image: url(assets/img/simpleblue.jpg);
 	background-size: cover;
 	margin: 10px 5%;
 	position: relative;
