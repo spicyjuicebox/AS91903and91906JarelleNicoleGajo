@@ -1,5 +1,29 @@
-{% extends "template.html" %} {% block title %}Home{% endblock %}
+{% extends "template2.html" %} {% block title %}Home{% endblock %}
 {% block content %}
+<!-- Blogs Section -->
+<section id="blogs">
+    <div class="blogs container">
+        <div class="blogs-top">
+            <h1 class="section-title"><span>C</span>reate a <span>P</span>ost</h1>
+            <p>Write your questions or suggestions down below.</p>
+            <p>🚨 Please make sure that your post is appropriate. 🚨</p>
+            <form method="POST">
+                <textarea name="text" id="text" class="form-control" style="font-size: 16px; width: 850px;"></textarea>
+                <br />
+                <div align="center">
+                    <button type="submit" class="btn btn-lg btn-primary">Post</button>
+                </div>
+            </form>
+            <br />
+            <div align="center">
+                <a href="/home">
+                <button type="button" class="btn btn-lg btn-secondary">Back</button></a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Old Thing for Create Post
 <section id="createpost">
     <h1 align="center">Make a Post</h1>
     <form method="POST">
@@ -15,4 +39,5 @@
         ><button type="button" class="btn btn-lg btn-secondary">Back</button></a>
     </div>
 </section>
+-->
 {% endblock %}

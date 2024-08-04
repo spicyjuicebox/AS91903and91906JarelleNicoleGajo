@@ -79,6 +79,19 @@ rgb(58, 115, 214), rgb(112, 158, 242)
 }
 /* Login and Signup End */
 
+/* Add this to the updated blogs section */
+#blogs .blogs-top .btn-secondary {
+	background-color: rgb(70, 95, 140);
+	border-color: rgb(70, 95, 140);
+	color: white;
+}
+
+#blogs .blogs-top .btn-secondary:hover {
+	background-color: rgb(58, 78, 118);
+	border-color: rgb(58, 78, 118);
+	color: white;
+}
+
 /* Ordering */
 .square-image {
     width: 100%;
@@ -147,17 +160,17 @@ rgb(58, 115, 214), rgb(112, 158, 242)
     background-color: rgb(58, 115, 214);
 }
 
-/* Update during order page, for Post page. */
+/* Update during order page, for Post page.
 #createapostbutton .btn-primary {
-	background-color: yellow;
-	border-color: red;
+	background-color: rgb(78, 132, 228);
+	border-color: rgb(78, 132, 228);
 	width: 500px;
 }
 
 .accordion-header, .accordion-body {
     width: 100%;
 }
-/* End Ordering */
+End Ordering */
 /* aoiwfhiq0wfhiowahfi0qwhfiowqhifiqwfh0qwfh */
 /* Adjust column widths */
 #foodlist .col-md-8 {
