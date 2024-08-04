@@ -34,7 +34,7 @@
     </div>
 
     <h1 align="center">{% block header %}Posts{% endblock %}</h1>
-    <div id="posts">
+    <div id="posts" class="mx-auto" style="width: 1200px; font-size: 16px;">
         {% for post in posts %}
         <div class="card border-dark">
             <div class="card-header d-flex justify-content-between align-items-center">
@@ -72,7 +72,7 @@
                 </div><!-- this is end of new div for thumbs up. -->
             </div>
             <div class="card-body">
-                <div class="card-text">{{post.text}}</div>
+                <div class="card-text" style="font-size: 16px;">{{post.text}}</div>
                 <br />
                 <div class="collapse" id="comments-{{post.id}}">
                     <div class="card">
@@ -109,9 +109,9 @@
                         </div>
                     </div>
                 </div>
-                <p class="card-text">
+                <p class="card-text" style="font-size: 16px;">
                     {% if post.comments|length > 0 %}
-                    <a data-bs-toggle="collapse" href="#comments-{{post.id}}" role="button">
+                    <a data-bs-toggle="collapse" href="#comments-{{post.id}}" role="button" style="font-size: 16px;">
                         <small>View {{post.comments|length}} Comments</small>
                     </a>
                     {% else %}
@@ -129,8 +129,9 @@
                         name="text"
                         class="form-control"
                         placeholder="Comment something!"
+                        style="font-size: 14px;"
                     />
-                    <button type="submit" class="btn btn-primary">Comment</button>
+                    <button type="submit" class="btn btn-primary" style="font-size: 14px;">Comment</button>
                 </form><!-- this is the end of comment divs. -->
             </div>
             <div class="card-footer text-muted">{{post.date_created}}</div>
