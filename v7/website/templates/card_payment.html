@@ -1,25 +1,32 @@
-{% extends "template.html" %} {% block title %}Card Payment{% endblock %}
+{% extends "template2.html" %} {% block title %}Card Payment{% endblock %}
 
 {% block content %}
-<div class="container">
-    <h1 class="text-center mt-5">Enter your card details</h1>
-    <form action="{{ url_for('views.process_card_payment') }}" method="post" class="mt-5">
-        <input type="hidden" name="order" value="{{ request.args.get('order') }}">
-        <div class="mb-3">
-            <label for="cardNumber" class="form-label">Card Number</label>
-            <input type="text" class="form-control" id="cardNumber" name="cardNumber" required>
+<!-- Blogs Section -->
+<section id="blogs">
+    <div class="blogs container">
+        <div class="blogs-top">
+            <h1 class="section-title">You have Chosen the <span>CARD</span> Option!</h1>
+            <p>Please pay for your order with a valid credit card.</p>
+            <p>The total amount to be paid is: ${{ total_price }}</p>
+            <form action="{{ url_for('views.process_card_payment') }}" method="post" class="mt-5">
+                <input type="hidden" name="order" value="{{ request.args.get('order') }}">
+                <div class="mb-3">
+                    <label for="cardNumber" class="form-label" style="font-size: 16px;">Card Number</label>
+                    <input type="text" class="form-control mx-auto text-center" style="font-size: 16px; width: 250px;" id="cardNumber" name="cardNumber" required>
+                </div>
+                <div class="mb-3">
+                    <label for="expiryDate" class="form-label" style="font-size: 16px;">Expiry Date</label>
+                    <input type="text" class="form-control mx-auto text-center" style="font-size: 16px; width: 250px;" id="expiryDate" name="expiryDate" required>
+                </div>
+                <div class="mb-3">
+                    <label for="cvv" class="form-label" style="font-size: 16px;">CVV</label>
+                    <input type="text" class="form-control mx-auto text-center" style="font-size: 16px; width: 250px;" id="cvv" name="cvv" required>
+                </div>
+                <div class="d-flex justify-content-center mt-5">
+                    <a href="{{ url_for('views.thank_you') }}" class="btn btn-success" style="font-size: 16px;">Submit Payment</a>
+                </div>
+            </form>
         </div>
-        <div class="mb-3">
-            <label for="expiryDate" class="form-label">Expiry Date</label>
-            <input type="text" class="form-control" id="expiryDate" name="expiryDate" required>
-        </div>
-        <div class="mb-3">
-            <label for="cvv" class="form-label">CVV</label>
-            <input type="text" class="form-control" id="cvv" name="cvv" required>
-        </div>
-        <div class="d-flex justify-content-center mt-5">
-            <a href="{{ url_for('views.thank_you') }}" class="btn btn-success">Submit Payment</a>
-        </div>
-    </form>    
-</div>
+    </div>
+</section>
 {% endblock %}
