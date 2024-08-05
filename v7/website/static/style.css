@@ -79,6 +79,18 @@ rgb(58, 115, 214), rgb(112, 158, 242)
 }
 /* Login and Signup End */
 
+/* Editing the toggle for deleting the post. */
+.card-header .btn-group button {
+	background-color: rgb(202, 22, 14);
+	border-color: rgb(202, 22, 14);
+}
+
+.card-header .btn-group button:hover {
+	background-color: rgb(142, 12, 5);
+	border-color: rgb(142, 12, 5);
+}
+/* End editing the toggle for deleting the post. */
+
 /* Add this to the updated blogs section */
 #blogs .blogs-top .btn-secondary {
 	background-color: rgb(70, 95, 140);
@@ -199,10 +211,11 @@ End Ordering */
     width: 100%;
 }
 
-/* Maintain box-sizing */
+/* Maintain box-sizing, removing for now.
 .accordion-body, .accordion-button, .btn-primary {
     box-sizing: border-box;
 }
+*/
 
 /* Cart section specific styles */
 .cart-section {

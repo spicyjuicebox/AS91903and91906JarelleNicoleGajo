@@ -7,7 +7,12 @@ from werkzeug.security import generate_password_hash, check_password_hash
 
 auth = Blueprint("auth", __name__)
 
-
+# Functions for login, sign-up and logout.
+# This function creates the route for the login page.
+# Takes data from the login form.
+# Validates that the email is registered.
+# Checks that the password is correct.
+# Redirecting to the blog page.
 @auth.route("/login", methods=['GET', 'POST'])
 def login():
     if request.method == 'POST':

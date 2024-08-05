@@ -4,6 +4,7 @@ from sqlalchemy.sql import func
 
 
 
+# Has a relationship with posts, comments, likes and orders.
 class User(db.Model,UserMixin):
     id = db.Column(db.Integer, primary_key=True)
     email = db.Column(db.String(150), unique=True)
