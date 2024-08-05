@@ -89,6 +89,18 @@ rgb(58, 115, 214), rgb(112, 158, 242)
 	background-color: rgb(142, 12, 5);
 	border-color: rgb(142, 12, 5);
 }
+
+.card-header .dropdown-menu {
+	background-color: rgb(202, 22, 14);
+	border-color: rgb(202, 22, 14);
+	color: white;
+}
+
+.card-header .dropdown-menu a:hover {
+	background-color: rgb(202, 22, 14);
+	border-color: rgb(202, 22, 14);
+	color: white;
+}
 /* End editing the toggle for deleting the post. */
 
 /* Add this to the updated blogs section */
