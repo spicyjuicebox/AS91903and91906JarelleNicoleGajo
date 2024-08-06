@@ -37,6 +37,7 @@ rgb(58, 115, 214), rgb(112, 158, 242)
     box-shadow: 0 5px 15px rgba(78, 132, 228, 0.4);
     width: 100%;
     max-width: 400px;
+	margin-top: 50px;
 }
 
 .form-box h2 {
