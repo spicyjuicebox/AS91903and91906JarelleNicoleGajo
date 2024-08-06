@@ -1615,6 +1615,16 @@ End Skin Types Info Section */
 		font-size: 6rem;
 	}
 
+	/* Posts Section */
+	#postssection {
+		flex-direction: column;
+		padding: 20px 80px;
+		align-items: center;
+		justify-content: center;
+		min-width: 20vh;
+	}
+	/* End Posts Section */
+
 	/* Order Section */
 	/* End Order Section */
 
