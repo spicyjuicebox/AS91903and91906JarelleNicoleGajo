@@ -4,24 +4,32 @@
     <div class="form-box">
         <h2>Sign Up</h2>
         <form method="POST">
+            <!-- Email -->
             <div class="input-group">
-                <label for="email">Email Address</label>
+                <label for="email">Email</label>
+                <!-- Note: The email type adds the field note for including the @. -->
                 <input
-                    type="text"
+                    type="email"
                     id="email"
                     name="email"
-                    placeholder="Enter Email"
+                    placeholder="Enter Email (example@gmail.com)"
                 />
             </div>
+
+            <!-- Username -->
             <div class="input-group">
                 <label for="username">Username</label>
+                <!-- Note: Maxlength set to 20 characters to input. -->
                 <input
                     type="text"
+                    maxlength="20"
                     id="username"
                     name="username"
-                    placeholder="Enter Username"
+                    placeholder="Enter Username (Max: 20 Characters)"
                 />
             </div>
+
+            <!-- Password -->
             <div class="input-group">
                 <label for="password1">Password</label>
                 <input
@@ -31,6 +39,8 @@
                     placeholder="Enter Password"
                 />
             </div>
+
+            <!-- Confirm Password -->
             <div class="input-group">
                 <label for="password2">Confirm Password</label>
                 <input
