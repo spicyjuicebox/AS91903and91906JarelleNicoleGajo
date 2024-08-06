@@ -54,7 +54,13 @@
                 <button type="submit">Sign Up</button>
             </div>
         </form>
+
+        <!-- Already Have an Account? Login Here -->
+        <div class="border-top pt-3 text-center">
+            <p class="text-muted">
+                Already have an account? <a class="ml-2" href="{{ url_for('auth.login') }}">Login Here</a>
+            </p>
+        </div>
     </div>
 </div>
-
 {% endblock %}
