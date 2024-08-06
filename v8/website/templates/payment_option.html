@@ -1,0 +1,38 @@
+{% extends "template2.html" %} {% block title %}Payment Option{% endblock %}
+
+{% block content %}
+<!-- Payment Option Section -->
+<section id="routines">
+    <div class="routines container">
+      <div class="routines-top">
+        <h1 class="section-title">How would you like to <span>Pay</span>?</h1>
+        <p>Please choose if you would like to pay with <span>CASH</span> or <span>CARD</span>.</p>
+      </div>
+      <div class="routines-bottom">
+        <div class="routines-item">
+          <div class="icon"><img src="{{ url_for('static', filename='assets/img/cashicon.png') }}" alt="Cash Icon"></div>
+          <h2>Cash Option</h2>
+          <p>By choosing the cash option, you are to pay for your order with cash during collection.</p>
+          <button class="btn btn-cash btn-lg mx-3" onclick="window.location.href='{{ url_for('views.cash_payment', order=request.args.get('order'), total=request.args.get('total')) }}'">Cash</button>
+        </div>
+        <div class="routines-item2">
+          <div class="icon"><img src="{{ url_for('static', filename='assets/img/cardicon.png') }}" alt="Card Icon"></div>
+          <h2>Card Option</h2>
+          <p>By choosing the card option, you are to pay for your order on this site.</p>
+          <button class="btn btn-card btn-lg mx-3" onclick="window.location.href='{{ url_for('views.card_payment', order=request.args.get('order'), total=request.args.get('total')) }}'">Card</button>
+        </div>
+      </div>
+    </div>
+</section>
+<!-- End Payment Option Section -->
+
+<script>
+    document.getElementById('cashOption').addEventListener('click', function () {
+        window.location.href = "{{ url_for('views.cash_payment') }}";
+    });
+
+    document.getElementById('cardOption').addEventListener('click', function () {
+        window.location.href = "{{ url_for('views.card_payment') }}";
+    });
+</script>
+{% endblock %}
