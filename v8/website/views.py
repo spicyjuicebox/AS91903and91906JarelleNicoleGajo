@@ -2,7 +2,7 @@ import os
 from pathlib import Path
 from PIL import Image
 import secrets
-from flask import Blueprint, render_template, request, flash, redirect, url_for, jsonify
+from flask import Blueprint, render_template, request, flash, redirect, url_for, jsonify, abort
 from flask_login import login_required, current_user
 from .models import Post, User, Like, Comment, Order
 from .forms import UpdateAccountForm, PostForm
@@ -217,3 +217,29 @@ def account():
         form.email.data = current_user.email
     image_file = url_for('static', filename='profile_pics/' + current_user.image_file)
     return render_template('account.html', user=current_user, image_file=image_file, form=form)
+
+
+# Updating the Post.
+@views.route("/update-post/<id>", methods=['GET', 'POST']) # The id is the post id.
+@login_required
+def update_post():
+    post = Post.query.filter_by(id=id).first()
+    if post.author != current_user.id: # If the post author is not the current user.
+        abort(403)
+        #flash('You do not have permission to update this post.', category='error')
+    form = PostForm()
+    if form.validate_on_submit():
+        post.title = form.title.data
+        post.text = form.text.data
+        db.session.commit()
+        flash('Post Updated!', category='success')
+        page = request.args.get('page', 1, type=int)
+        posts = Post.query.order_by(Post.date_created.desc()).paginate(page=page, per_page=4)
+        return render_template("blog.html", user=current_user, posts=posts)
+        #return redirect(url_for('views.blog'))
+    
+    elif request.method == 'GET': # When loading the page, it will get what is already in the database.
+        form.title.data = post.title
+        form.text.data = post.txt
+        image_file = url_for('static', filename='profile_pics/' + current_user.image_file)
+    return render_template('update_post.html', form=form, user=current_user, post=post, image_file=image_file)
