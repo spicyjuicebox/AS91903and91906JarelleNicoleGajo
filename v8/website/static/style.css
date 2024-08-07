@@ -15,6 +15,14 @@ body {
 rgb(58, 115, 214), rgb(112, 158, 242)
 */
 
+/* Profile Picture */
+#postssection .article-img {
+	height: 65px;
+	width: 65px;
+	margin: 16px;
+}
+/* End Profile Picture */
+
 .btn-outline-info {
 	background-color: rgb(70, 95, 140);
 	border-color: rgb(70, 95, 140);
