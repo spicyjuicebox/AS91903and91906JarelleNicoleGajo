@@ -75,6 +75,8 @@
             </div>
             <section id="commentingsection">
                 <div class="card-body">
+                    <div class="card-text post-title">{{post.title}}</div>
+                    <br />
                     <div class="card-text" style="font-size: 16px;">{{post.text}}</div>
                     <br />
                     <div class="collapse" id="comments-{{post.id}}">
@@ -91,7 +93,7 @@
                                         <small class="text-muted"> {{comment.date_created}}</small>
                                         {% if user.id == comment.author or user.id == post.author %}
                                         <div class="btn-group">
-                                            <button type="button" class="btn btn-sm btn-primary dropdown-toggle" data-bs-toggle="dropdown"></button>
+                                            <button type="button" class="btn btn-sm btn-primary dropdown-toggle" data-toggle="dropdown"></button>
                                             <ul class="dropdown-menu">
                                                 <li>
                                                     <a

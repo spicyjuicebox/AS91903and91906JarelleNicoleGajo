@@ -35,3 +35,10 @@ class UpdateAccountForm(FlaskForm):
         
         if not email.data.endswith('@gmail.com'):
             raise ValidationError('Email must end with @gmail.com.')
+
+
+# Creating a Post Form
+class PostForm(FlaskForm):
+    title = StringField('Title', validators=[DataRequired()])
+    text = TextAreaField('text', validators=[DataRequired()])
+    submit = SubmitField('Update')

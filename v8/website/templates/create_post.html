@@ -1,6 +1,52 @@
 {% extends "template2.html" %} {% block title %}Home{% endblock %}
 {% block content %}
-<!-- Blogs Section -->
+<div class="form-container">
+    <div class="form-box">
+
+        <h1>Create a Post</h1>
+        <form method="POST" enctype="multipart/form-data">
+            {{ form.hidden_tag() }}
+
+            <!-- Title -->
+            <div class="form-group">
+                {{ form.title.label(class="form-control-label") }}
+                {% if form.title.errors %}
+                    {{ form.title(class="form-control form-control-lg is-invalid")}}
+                    <div class="invalid-feedback">
+                        {% for error in form.title.errors %}
+                            <span>{{ error }}</span>
+                        {% endfor %}
+                    </div>
+                {% else %}
+                    {{ form.title(class="form-control form-control-lg")}}
+                {% endif %}
+            </div>
+
+            <!-- Text -->
+            <div class="form-group">
+                {{ form.text.label(class="form-control-label") }}
+                {% if form.text.errors %}
+                    {{ form.text(class="form-control form-control-lg is-invalid")}}
+                    <div class="invalid-feedback">
+                        {% for error in form.text.errors %}
+                            <span>{{ error }}</span>
+                        {% endfor %}
+                    </div>
+                {% else %}
+                    {{ form.text(class="form-control form-control-lg")}}
+                {% endif %}
+            </div>
+        </fieldset>
+        </br>
+        <div class="form-group">
+            {{ form.submit(class="btn btn-outline-info") }}
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+
+<!-- Old
 <section id="blogs">
     <div class="blogs container">
         <div class="blogs-top">
@@ -22,22 +68,12 @@
         </div>
     </div>
 </section>
-
-<!-- Old Thing for Create Post
-<section id="createpost">
-    <h1 align="center">Make a Post</h1>
-    <form method="POST">
-        <textarea name="text" id="text" class="form-control"></textarea>
-        <br />
-        <div align="center">
-            <button type="submit" class="btn btn-lg btn-primary">Post</button>
-        </div>
-    </form>
-    <br />
-    <div align="center">
-        <a href="/home"
-        ><button type="button" class="btn btn-lg btn-secondary">Back</button></a>
-    </div>
-</section>
 -->
-{% endblock %}
+
+<!--
+    <section id="buttonforupdate">
+                <div class="input-group">
+                    <button type="submit">Update</button>
+                </div>
+            </section>
+-->

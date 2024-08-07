@@ -15,6 +15,14 @@ body {
 rgb(58, 115, 214), rgb(112, 158, 242)
 */
 
+/* For Title of Post */
+.post-title {
+	font-weight: 5000;
+	line-height: 1.2;
+	font-size: 2rem;
+	color: rgb(40, 88, 154)
+}
+
 /* Profile Picture */
 #postssection .article-img {
 	height: 65px;
