@@ -1,3 +1,8 @@
+from flask_wtf import FlaskForm
+from flask_wtf.file import FileField, FileAllowed
+from flask_login import current_user
+from wtforms import StringField, PasswordField, SubmitField, BooleanField, TextAreaField
+from wtforms.validators import DataRequired, Length, Email, EqualTo, ValidationError
 from flask import Blueprint, render_template, redirect, url_for, request, flash
 from . import db
 from .models import User
@@ -67,6 +72,7 @@ def sign_up():
             return redirect(url_for('views.home'))
         
     return render_template("signup.html", user=current_user)
+
 
 @auth.route("/logout")
 @login_required

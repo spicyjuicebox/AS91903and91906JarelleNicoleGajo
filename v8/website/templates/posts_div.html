@@ -38,7 +38,7 @@
     <div id="posts" class="mx-auto" style="font-size: 16px;">
         {% for post in posts %}
         <div class="card border-dark">
-            <img class="rounded-circle article-img" src="{{ url_for('static', filename='profile_pics/' + post.user.image_file) }}">
+            <img class="rounded-circle article-img" src="{{ url_for('static', filename='profile_pics/' + post.user.image_file) }}"> <!-- This is for the profile picture. -->
             <div class="card-header d-flex justify-content-between align-items-center">
                 <a href="/posts/{{post.user.username}}">{{post.user.username}}</a>
                 <div><!-- this is a new div for thumbs up -->
@@ -165,8 +165,7 @@
         <a href="/create-post"
             ><button type="button" class="btn btn-primary btn-lg">
                 Create a Post
-            </button></a
-        >
+            </button></a>
     </div>
 </section>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" 

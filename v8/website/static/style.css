@@ -21,6 +21,11 @@ rgb(58, 115, 214), rgb(112, 158, 242)
 	width: 65px;
 	margin: 16px;
 }
+.form-container img {
+	height: 80px;
+	width: 80px;
+	margin: 16px;
+}
 /* End Profile Picture */
 
 .btn-outline-info {
@@ -60,9 +65,21 @@ rgb(58, 115, 214), rgb(112, 158, 242)
 	margin-top: 50px;
 }
 
+.form-box h1 {
+    margin-bottom: 20px;
+    color: rgb(78, 132, 228);
+    text-align: center;
+}
+
 .form-box h2 {
     margin-bottom: 20px;
-    color: rgb(78, 132, 228); /* Login Title */
+    color: rgb(78, 132, 228);
+    text-align: center;
+}
+
+.form-box p {
+    margin-bottom: 20px;
+    color: rgb(78, 132, 228);
     text-align: center;
 }
 
@@ -74,7 +91,7 @@ rgb(58, 115, 214), rgb(112, 158, 242)
 .form-box .input-group label {
     display: block;
     margin-bottom: 5px;
-    color: rgb(78, 132, 228); /* Small Title */
+    color: rgb(78, 132, 228);
 }
 
 .form-box .input-group input {
@@ -86,6 +103,40 @@ rgb(58, 115, 214), rgb(112, 158, 242)
     display: block;
     margin: 0 auto;
 }
+
+
+/* Account Update */
+.form-box .input-group #labelforupdate {
+    display: block;
+    margin-bottom: -5px;
+    color: rgb(78, 132, 228);
+}
+.form-box .input-group #inputforupdate {
+    width: 100%;
+    max-width: 400px;
+    padding: 10px;
+    border: 0px solid rgb(112, 158, 242);
+    font-size: 1.6rem;
+    display: block;
+    margin: 0 auto;
+}
+#buttonforupdate button {
+    width: 90%;
+    max-width: 300px;
+    padding: 10px;
+    background-color: rgb(78, 132, 228);
+    border: none;
+    border-radius: 10px;
+    color: white;
+    font-size: 1.6rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    display: block;
+    margin: 0 auto;
+	margin-top: 15px;
+	margin-bottom: -10px;
+}
+
 
 .form-box button {
     width: 90%;
@@ -131,7 +182,7 @@ rgb(58, 115, 214), rgb(112, 158, 242)
 }
 /* End editing the toggle for deleting the post. */
 
-/* Add this to the updated blogs section */
+/* Add this to the updated blogs section, Paginating */
 #blogs .blogs-top .btn-secondary {
 	background-color: rgb(70, 95, 140);
 	border-color: rgb(70, 95, 140);
