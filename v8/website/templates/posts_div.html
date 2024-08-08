@@ -1,4 +1,6 @@
-{% extends "template.html" %} {% block title %}Home{% endblock %}{% block content %}
+{% extends "template.html" %} {% block title %}Posts{% endblock %}
+
+{% block content %}
 <!-- Bootstrap Carousel -->
 <div id="hero-carousel" class="carousel slide" data-bs-ride="carousel">
     <div class="carousel-indicators">
@@ -146,21 +148,6 @@
     </div>
 </section>
 
-<!-- Paginating -->
-{% for page_num in posts.iter_pages(left_edge=1, right_edge=1, left_current=1, right_current=2) %}
-    {% if page_num %}
-        {% if posts.page == page_num %}
-            <a class="btn btn-outline-info mb-4" style="margin-left: 20px;" href="{{ url_for('views.blog', page=page_num)}}">{{ page_num }}</a>
-        {% else %}
-            <a class="btn btn-outline-info mb-4" style="margin-left: 20px;" href="{{ url_for('views.blog', page=page_num)}}">{{ page_num }}</a>
-        {% endif %}
-    {% else %}
-        ...
-    {% endif %}
-{% endfor %}
-
-
-
 
 {% block footer %}
 <br/>
@@ -177,4 +164,5 @@
 integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" 
 crossorigin="anonymous">
 </script>
-{% endblock %} {% endblock %}
+{% endblock %}
+{% endblock %}
