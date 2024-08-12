@@ -471,11 +471,12 @@
 </section>
 
 <script>
+    /* Cart Section */
     document.addEventListener('DOMContentLoaded', function () {
-        const cart = document.getElementById('cart');
-        const totalPriceElement = document.getElementById('total-price');
+        const cart = document.getElementById('cart'); /* This is for getting the cart element. */
+        const totalPriceElement = document.getElementById('total-price'); /* This is for getting the total price element. */
     
-        function updateTotalPrice() {
+        function updateTotalPrice() { /* Updating Total Price in Cart */
             let totalPrice = 0;
             cart.querySelectorAll('.list-group-item').forEach(item => {
                 const price = parseFloat(item.getAttribute('data-price'));
@@ -483,8 +484,8 @@
             });
             totalPriceElement.textContent = totalPrice.toFixed(2);
         }
-    
-        document.querySelectorAll('.add-to-order').forEach(button => {
+        /* Adding to Cart */
+        document.querySelectorAll('.add-to-order').forEach(button => { /* This is for adding the items to the cart. */
             button.addEventListener('click', function (event) {
                 event.preventDefault();
                 const topping = this.getAttribute('data-topping');
@@ -495,6 +496,7 @@
                 listItem.textContent = topping;
                 listItem.setAttribute('data-price', price);
     
+                /* Remove Button */
                 const removeButton = document.createElement('button');
                 removeButton.classList.add('btn', 'btn-danger', 'btn-sm');
                 removeButton.textContent = 'Remove';
@@ -508,7 +510,7 @@
                 updateTotalPrice();
             });
         });
-    
+        /* Placing Order */
         document.getElementById('place-order').addEventListener('click', function () {
             const items = [];
             let totalPrice = 0;
@@ -520,6 +522,6 @@
     
             window.location.href = "{{ url_for('views.payment_option') }}?order=" + encodeURIComponent(items.join(', ')) + "&total=" + totalPrice.toFixed(2);
         });
-    });    
+    });
 </script>
 {% endblock %}
