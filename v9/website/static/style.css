@@ -511,20 +511,22 @@ p {
 /* Button */
 .cta {
 	display: inline-block;
-	padding: 10px 30px;
+	padding: 5px 5px;
 	color: white;
-	background-color: transparent;
-	border: 2px solid rgb(18, 182, 125);
-	font-size: 2rem;
+	background-color: rgb(78, 132, 228);
+	border: 2px solid rgb(78, 132, 228);
+	font-size: 20px;
 	text-transform: uppercase;
 	letter-spacing: 0.1rem;
 	margin-top: 30px;
 	transition: 0.3s ease;
 	transition-property: background-color, color;
+	border-radius: 10px;
 }
 .cta:hover {
 	color: white;
-	background-color: rgb(15, 138, 76);
+	background-color: rgb(112, 158, 242);
+	border-color: rgb(112, 158, 242);
 }
 /* End Button */
 
@@ -1173,8 +1175,8 @@ p {
 /* Media Query For Tablet */
 @media only screen and (min-width: 768px) {
 	.cta {
-		font-size: 2.5rem;
-		padding: 20px 60px;
+		font-size: 20px;
+		padding: 10px 15px;
 	}
 	h1.section-title {
 		font-size: 6rem;
