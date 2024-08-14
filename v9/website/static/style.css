@@ -1,0 +1,1263 @@
+@import url('https://fonts.googleapis.com/css2?family=Sniglet&display=swap');
+
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+	font-family: 'Sniglet', cursive;
+}
+
+body {
+	background-image: url(assets/img/backgroundimage.png);
+}
+
+.btn-outline-info {
+	background-color: rgb(70, 95, 140);
+	border-color: rgb(70, 95, 140);
+	color: white;
+}
+
+.btn-outline-info .btn:hover {
+	background-color: rgb(70, 95, 140);
+	border-color: rgb(70, 95, 140);
+	color: white;
+}
+
+/* This makes it so that the flash messages are above the navigation bar. */
+.alert {
+	z-index: 5000;
+	text-align: center;
+	font-size: 16px;
+}
+
+/* Colour
+rgb(58, 115, 214), rgb(112, 158, 242)
+*/
+
+/* Login and Signup */
+.form-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+.form-box {
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 30px;
+	border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(78, 132, 228, 0.4);
+    width: 100%;
+    max-width: 400px;
+	margin-top: 50px;
+}
+
+.form-box h1 {
+    margin-bottom: 20px;
+    color: rgb(78, 132, 228);
+    text-align: center;
+}
+
+.form-box h2 {
+    margin-bottom: 20px;
+    color: rgb(78, 132, 228);
+    text-align: center;
+}
+
+.form-box p {
+    margin-bottom: 20px;
+    color: rgb(78, 132, 228);
+    text-align: center;
+}
+
+.form-box .input-group {
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.form-box .input-group label {
+    display: block;
+    margin-bottom: 5px;
+    color: rgb(78, 132, 228);
+}
+
+.form-box .input-group input {
+    width: 100%;
+    max-width: 400px;
+    padding: 10px;
+    border: 1px solid rgb(112, 158, 242);
+    font-size: 1.6rem;
+    display: block;
+    margin: 0 auto;
+}
+
+.form-box button {
+    width: 90%;
+    max-width: 300px;
+    padding: 10px;
+    background-color: rgb(78, 132, 228);
+    border: none;
+    border-radius: 10px;
+    color: white;
+    font-size: 1.6rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    display: block;
+    margin: 0 auto;
+}
+
+.form-box button:hover {
+    background-color: rgb(112, 158, 242);
+}
+/* End Login and Signup */
+
+
+/* Account Update */
+/* Avatar Image */
+#postssection .article-img {
+	height: 65px;
+	width: 65px;
+	margin: 16px;
+}
+.form-container img {
+	height: 80px;
+	width: 80px;
+	margin: 16px;
+}
+/* End Avatar Image */
+.form-box .input-group #labelforupdate {
+    display: block;
+    margin-bottom: -5px;
+    color: rgb(78, 132, 228);
+}
+.form-box .input-group #inputforupdate {
+    width: 100%;
+    max-width: 400px;
+    padding: 10px;
+    border: 0px solid rgb(112, 158, 242);
+    font-size: 1.6rem;
+    display: block;
+    margin: 0 auto;
+}
+#buttonforupdate button {
+    width: 90%;
+    max-width: 300px;
+    padding: 10px;
+    background-color: rgb(78, 132, 228);
+    border: none;
+    border-radius: 10px;
+    color: white;
+    font-size: 1.6rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    display: block;
+    margin: 0 auto;
+	margin-top: 15px;
+	margin-bottom: -10px;
+}
+/* End Account Update */
+
+
+/* Posts Section */
+/* For Title of Post */
+.post-title {
+	font-weight: 5000;
+	line-height: 1.2;
+	font-size: 2rem;
+	color: rgb(40, 88, 154)
+}
+/* End Title of Post */
+/* Editing the toggle for deleting the post. */
+.card-header .btn-group button {
+	background-color: rgb(171, 200, 239);
+	border-color: rgb(171, 200, 239);
+}
+
+.card-header .btn-group button:hover {
+	background-color: rgb(171, 200, 239);
+	border-color: rgb(171, 200, 239);
+}
+
+.card-header .dropdown-menu {
+	background-color: rgb(171, 200, 239);
+	border-color: rgb(171, 200, 239);
+}
+
+.card-header .dropdown-menu a:hover {
+	background-color: rgb(150, 185, 235);
+	border-color: rgb(150, 185, 235);
+}
+/* End editing the toggle for deleting the post. */
+/* End Posts Section */
+
+
+/* Ordering */
+.square-image {
+    width: 100%;
+    padding-top: 100%;
+    position: relative;
+    box-sizing: border-box;
+}
+
+.square-image img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.accordion-button {
+    background-color: rgb(58, 115, 214);
+    color: white;
+    font-weight: bold;
+    box-sizing: border-box;
+	display: flex;
+    align-items: center;
+    justify-content: center;
+	width: 650px;
+}
+
+.accordion-button:not(.collapsed) {
+    color: white;
+    background-color: rgb(58, 115, 214);
+}
+
+.accordion-item {
+    width: 650px;
+	margin-left: -50px;
+}
+
+.accordion-collapse {
+	width: 650px;
+}
+
+.accordion-body {
+    min-height: 300px;
+    box-sizing: border-box;
+	background-color: rgb(194, 212, 240);
+}
+
+#foodlist .btn-primary {
+    width: calc(100% - 2rem);
+    margin: 1rem;
+}
+
+#foodlist .btn-primary {
+    background-color: rgb(112, 158, 242);
+}
+
+#foodlist .btn-primary:hover {
+    background-color: rgb(58, 115, 214);
+}
+
+#foodlist .col-md-8 {
+    flex: 0 0 66.666667%;
+    max-width: 66.666667%;
+}
+
+#foodlist .col-md-4 {
+    flex: 0 0 33.333333%;
+    max-width: 33.333333%;
+}
+
+#foodlist .smctuckshopfoodmenu, .accordion-item {
+    margin-left: 0;
+}
+
+#foodlist .container {
+    display: flex;
+    flex-wrap: nowrap;
+}
+
+.accordion-button, .accordion-collapse, .accordion-item {
+    width: 100%;
+}
+/* Cart */
+.cart-section {
+    padding-left: 20px;
+}
+#foodlist .btn-success {
+	background-color: rgb(40, 167, 69);
+	border-color: rgb(40, 167, 69);
+	color: white;
+	box-shadow: 0px 5px 18px 0 rgb(40, 167, 69);
+}
+
+#foodlist .btn-success:hover {
+	background-color: rgb(22, 142, 52);
+	border-color: rgb(22, 142, 52);
+	color: white;
+}
+/* End Ordering */
+
+
+/* Payment Option Section */
+/* Button Styles */
+.btn-lg {
+    font-size: 1.5rem;
+    padding: 15px 30px;
+}
+
+.btn-cash {
+    background-color: rgb(78, 132, 228);
+    border-color: rgb(78, 132, 228);
+	color: white;
+	box-shadow: 0px 5px 18px 0 rgb(78, 132, 228);
+}
+
+.btn-card {
+    background-color: rgb(78, 132, 228);
+    border-color: rgb(78, 132, 228);
+	color: white;
+	box-shadow: 0px 5px 18px 0 rgb(78, 132, 228);
+}
+/* Payment Page Setup Bit */
+#paymentpagesetup .btn-cash:hover {
+    background-color: rgb(34, 95, 208);
+    border-color: rgb(34, 95, 208);
+	color: white;
+}
+
+#paymentpagesetup .btn-card:hover {
+    background-color: rgb(34, 95, 208);
+    border-color: rgb(34, 95, 208);
+	color: white;
+}
+/* End Payment Page Setup Bit */
+/* End Payment Option Section */
+
+
+/* Cash Payment Section */
+#pagesetup .pagesetup-top .btn-success {
+	background-color: rgb(78, 132, 228);
+	border-color: rgb(78, 132, 228);
+	color: white;
+	box-shadow: 0px 5px 18px 0 rgb(78, 132, 228);
+}
+
+#pagesetup .pagesetup-top .btn-success:hover {
+	background-color: rgb(34, 95, 208);
+	border-color: rgb(34, 95, 208);
+	color: white;
+}
+/* End Cash Payment Section */
+
+
+/* ???? */
+.button-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+/* Footer Section */
+footer
+{
+	position: relative;
+	width: 100%;
+	background: rgb(34, 95, 208);
+	min-height: 100px;
+	padding: 20px 50px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+}
+
+footer .social_icon, footer .menu {
+	position: relative;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin: 10px 0;
+	flex-wrap: wrap;
+}
+
+footer .social_icon li, footer .menu li {
+	list-style: none;
+}
+
+footer .social_icon li a, footer .menu li a {
+	font-size: 2em;
+	color: #fff;
+	margin: 0 10px;
+	display: inline-block;
+	transition: 0.5s;
+}
+
+footer .menu h2 {
+	font-size: 2em;
+	color: rgb(10, 40, 97);
+	margin: 0 10px;
+	display: inline-block;
+	transition: 0.5s;
+}
+
+footer .social_icon li a:hover {
+	transform: translateY(-10px);
+}
+
+footer .menu li a:hover {
+	color: rgb(78, 132, 228)
+}
+
+footer p {
+	color: #fff;
+	text-align: center;
+	margin-top: 15px;
+	margin-bottom: 10px;
+	font-size: 1.1em;
+}
+
+footer .wave {
+	position: absolute;
+	top: -100px;
+	width: 100%;
+	height: 100px;
+	background: url(./images/purplewaveimg.png);
+	background-size: 1000px 100px;
+}
+
+footer .wave#wave1
+{
+	z-index: 999;
+	opacity: 1;
+	bottom: 0;
+	animation: animateWave 4s linear infinite;
+}
+
+footer .wave#wave2
+{
+	z-index: 998;
+	opacity: 0.5;
+	bottom: 10px;
+	animation: animateWave_02 4s linear infinite;
+}
+
+/* Keyframes for Footer Wave */
+@keyframes animateWave
+{
+	0%
+	{
+		background-position-x: 1000px;
+	}
+	100%
+	{
+		background-position-x: 0px;
+	}
+}
+
+@keyframes animateWave_02
+{
+	0%
+	{
+		background-position-x: 0px;
+	}
+	100%
+	{
+		background-position-x: 1000px;
+	}
+}
+/* End Keyframes for Footer Wave */
+
+html {
+	font-size: 10px;
+	scroll-behavior: smooth;
+}
+
+a, a:hover, a:focus, a:active {
+    text-decoration: none !important;
+}
+
+.container {
+	min-height: 100vh;
+	width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+img {
+	height: 100%;
+	width: 100%;
+	object-fit: cover;
+}
+
+p {
+	color: black;
+	font-size: 1.4rem;
+	margin-top: 5px;
+	line-height: 2.5rem;
+	font-weight: 300;
+	letter-spacing: .05rem;
+}
+
+.section-title {
+	font-size: 4rem;
+	font-weight: 300;
+	color: rgb(112, 158, 242);
+	margin-bottom: 20px;
+	text-transform: uppercase;
+	letter-spacing: 0.2rem;
+	text-align: center;
+}
+.section-title span {
+	color: rgb(58, 115, 214);
+}
+
+
+/* Button */
+.cta {
+	display: inline-block;
+	padding: 10px 30px;
+	color: white;
+	background-color: transparent;
+	border: 2px solid rgb(18, 182, 125);
+	font-size: 2rem;
+	text-transform: uppercase;
+	letter-spacing: 0.1rem;
+	margin-top: 30px;
+	transition: 0.3s ease;
+	transition-property: background-color, color;
+}
+.cta:hover {
+	color: white;
+	background-color: rgb(15, 138, 76);
+}
+/* End Button */
+
+/* Brand */
+.brand h1 {
+	font-size: 3rem;
+	text-transform: uppercase;
+	color: white;
+	text-decoration: none;
+}
+.brand span {
+	color: rgb(78, 132, 228);
+	text-decoration: none;
+}
+/* End Brand */
+
+/* Navigation Section */
+#header {
+	position: fixed;
+	z-index: 1000;
+	left: 0;
+	top: 0;
+	width: 100vw;
+	height: auto;
+	text-decoration: none;
+}
+
+#header .header {
+	min-height: 8vh;
+	background-color: transparent;
+	transition: 0.3s ease background-color;
+	border-radius: 10px;
+}
+
+#header .nav-bar {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	width: 100%;
+	height: 100%;
+	max-width: 1300px;
+	padding: 0 10px;
+}
+
+#header .nav-list ul {
+	list-style: none;
+	position: absolute;
+	background-color: rgb(28, 74, 154); /*Background colour for hamburger.*/
+	text-decoration: none;
+	width: 100vw;
+	height: 100vh;
+	left: 100%;
+	top: 0;
+	display: flex;
+	flex-direction: column; /*Text in column for hamburger.*/
+	justify-content: center;
+	align-items: center;
+	z-index: 1;
+	overflow-x: hidden;
+	transition: 0.5s ease left;
+}
+
+#header .nav-list ul.active {
+	left: 0%;
+}
+
+#header .nav-list ul a {
+	font-size: 2.5rem;
+	font-weight: 500;
+	letter-spacing: 0.2rem;
+	text-decoration: none;
+	color: white;
+	text-transform: uppercase;
+	text-align: center;
+	padding: 20px 0px 12px 20px;
+	display: block;
+}
+
+#header .nav-list ul a::after {
+	content: attr(data-after);
+	position: absolute;
+	top: 50%;
+	left: 53%;
+	transform: translate(-50%, -50%) scale(0);
+	color: rgb(78, 132, 228);
+	font-size: 13rem;
+	letter-spacing: 50px;
+	text-decoration: none;
+	z-index: -1;
+	transition: 0.3s ease letter-spacing;
+}
+
+#header .nav-list ul li:hover a::after {
+	transform: translate(-50%, -50%) scale(1);
+	letter-spacing: initial;
+}
+
+#header .nav-list ul li:hover a {
+	color: rgb(112, 158, 242);
+    transition: 0.3s ease;
+	text-decoration: none;
+}
+
+#header .hamburger {
+	height: 60px;
+	width: 60px;
+	display: inline-block;
+	border: 3px solid white;
+	border-radius: 50%;
+	position: relative;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	z-index: 100;
+	cursor: pointer;
+	transform: scale(0.8);
+	margin-right: 20px;
+}
+
+#header .hamburger:after {
+	position: absolute;
+	content: '';
+	height: 100%;
+	width: 100%;
+	border-radius: 50%;
+	border: 3px solid white;
+	animation: hamburger_puls 1s ease infinite;
+}
+
+#header .hamburger .bar {
+	height: 2px;
+	width: 30px;
+	position: relative;
+	background-color: white;
+	z-index: -1;
+}
+
+#header .hamburger .bar::after,
+#header .hamburger .bar::before {
+	content: '';
+	position: absolute;
+	height: 100%;
+	width: 100%;
+	left: 0;
+	background-color: white;
+	transition: 0.3s ease;
+	transition-property: top, bottom;
+}
+
+#header .hamburger .bar::after {
+	top: 8px;
+}
+
+#header .hamburger .bar::before {
+	bottom: 8px;
+}
+
+#header .hamburger.active .bar::before {
+	bottom: 0;
+}
+
+#header .hamburger.active .bar::after {
+	top: 0;
+}
+/* End Navigation Section */
+
+/* Navigation Section 2 */
+#header2 {
+	position: fixed;
+	z-index: 1000;
+	left: 0;
+	top: 0;
+	width: 100vw;
+	height: auto;
+	text-decoration: none;
+}
+
+#header2 .header2 {
+	min-height: 8vh;
+	background-color: rgb(28, 74, 154);
+	transition: 0.3s ease background-color;
+	border-radius: 10px;
+}
+
+#header2 .nav-bar2 {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	width: 100%;
+	height: 100%;
+	max-width: 1300px;
+	padding: 0 10px;
+}
+
+#header2 .nav-list2 ul {
+	list-style: none;
+	position: absolute;
+	background-color: rgb(28, 74, 154); /*Background colour for hamburger.*/
+	text-decoration: none;
+	width: 100vw;
+	height: 100vh;
+	left: 100%;
+	top: 0;
+	display: flex;
+	flex-direction: column; /*Text in column for hamburger.*/
+	justify-content: center;
+	align-items: center;
+	z-index: 1;
+	overflow-x: hidden;
+	transition: 0.5s ease left;
+}
+
+#header2 .nav-list2 ul.active {
+	left: 0%;
+}
+
+#header2 .nav-list2 ul a {
+	font-size: 2.5rem;
+	font-weight: 500;
+	letter-spacing: 0.2rem;
+	text-decoration: none;
+	color: white;
+	text-transform: uppercase;
+	text-align: center;
+	padding: 20px 0px 12px 20px;
+	display: block;
+}
+
+#header2 .nav-list2 ul a::after {
+	content: attr(data-after);
+	position: absolute;
+	top: 50%;
+	left: 53%;
+	transform: translate(-50%, -50%) scale(0);
+	color: rgb(78, 132, 228);
+	font-size: 13rem;
+	letter-spacing: 50px;
+	text-decoration: none;
+	z-index: -1;
+	transition: 0.3s ease letter-spacing;
+}
+
+#header2 .nav-list2 ul li:hover a::after {
+	transform: translate(-50%, -50%) scale(1);
+	letter-spacing: initial;
+}
+
+#header2 .nav-list2 ul li:hover a {
+	color: rgb(112, 158, 242);
+    transition: 0.3s ease;
+	text-decoration: none;
+}
+
+#header2 .hamburger2 {
+	height: 60px;
+	width: 60px;
+	display: inline-block;
+	border: 3px solid white;
+	border-radius: 50%;
+	position: relative;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	z-index: 100;
+	cursor: pointer;
+	transform: scale(0.8);
+	margin-right: 20px;
+}
+
+#header2 .hamburger2:after {
+	position: absolute;
+	content: '';
+	height: 100%;
+	width: 100%;
+	border-radius: 50%;
+	border: 3px solid white;
+	animation: hamburger_puls 1s ease infinite;
+}
+
+#header2 .hamburger2 .bar {
+	height: 2px;
+	width: 30px;
+	position: relative;
+	background-color: white;
+	z-index: -1;
+}
+
+#header2 .hamburger2 .bar::after,
+#header2 .hamburger2 .bar::before {
+	content: '';
+	position: absolute;
+	height: 100%;
+	width: 100%;
+	left: 0;
+	background-color: white;
+	transition: 0.3s ease;
+	transition-property: top, bottom;
+}
+
+#header2 .hamburger2 .bar::after {
+	top: 8px;
+}
+
+#header2 .hamburger2 .bar::before {
+	bottom: 8px;
+}
+
+#header2 .hamburger2.active .bar::before {
+	bottom: 0;
+}
+
+#header2 .hamburger2.active .bar::after {
+	top: 0;
+}
+/* End Navigation Section 2 */
+
+
+/* Bootstrap Carousel */
+.c-item {
+	height: 550px;
+}
+
+.c-img{
+	height: 100%;
+	object-fit: cover;
+	filter: brightness(0.75);
+}
+
+.carousel-caption h2 {
+	font-size: 4rem;
+	margin-top: 14rem !important;
+  }
+
+.carousel-caption h1 {
+	font-size: 8rem;
+}
+/* End Bootstrap Carousel */
+
+
+/* Page Setup Section */
+#pagesetup .pagesetup {
+	flex-direction: column;
+	text-align: center;
+	max-width: 1500px;
+	margin: 0 auto;
+	padding: 100px 0;
+}
+
+#pagesetup .section-title {
+	font-size: 4rem;
+	font-weight: 300;
+	color:rgb(112, 158, 242);
+	margin-bottom: 10px;
+	text-transform: uppercase;
+	letter-spacing: .2rem;
+	text-align: center;
+}
+
+#pagesetup .section-title span {
+	color: rgb(78, 132, 228);
+}
+
+#foodlist .pagesetup-top h1 {
+	font-size: 4rem;
+	font-weight: 300;
+	color:red;
+	margin-bottom: 10px;
+	text-transform: uppercase;
+	letter-spacing: .2rem;
+	text-align: center;
+	margin-top: 50px;
+}
+#pagesetup .pagesetup-top p span{
+	color: rgb(78, 132, 228);
+	font-size: 1.7rem;
+	margin-top: 5px;
+	line-height: 2.5rem;
+	font-weight: 300px;
+	letter-spacing: .05rem;
+}
+
+#pagesetup .pagesetup-top p{
+	color: black;
+	font-size: 1.7rem;
+	margin-top: 5px;
+	line-height: 2.5rem;
+	font-weight: 300px;
+	letter-spacing: .05rem;
+}
+
+#pagesetup .pagesetup-bottom {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-wrap: wrap;
+	margin-top: 50px;
+}
+
+#pagesetup .pagesetup-item {
+	flex-basis: 80%;
+	display: flex;
+	align-items: flex-start;
+	justify-content: center;
+	flex-direction: column;
+	padding: 30px;
+	border-radius: 10px;
+	background-image: url(./images/skintypesimg1.png);
+	background-size: cover;
+	margin: 10px 5%;
+	position: relative;
+	z-index: 1;
+	overflow: hidden;
+}
+
+#pagesetup .pagesetup-item::after {
+	content: '';
+	position: absolute;
+	left: 0;
+	top: 0;
+	height: 100%;
+	width: 100%;
+	background-image: linear-gradient(60deg, #5b9bea 0%, #0a61cc 100%);
+	opacity: 0.5;
+	z-index: -1;
+}
+
+#pagesetup .pagesetup-bottom .icon {
+	height: 80px;
+	width: 80px;
+	margin-bottom: 20px;
+}
+
+#pagesetup .pagesetup-item h2 {
+	font-size: 2rem;
+	color: white;
+	margin-bottom: 10px;
+	text-transform: uppercase;
+}
+
+#pagesetup .pagesetup-item p {
+	color: white;
+	text-align: left;
+	font-size: 1.4rem;
+	line-height: 1.9rem;
+}
+
+#pagesetup .pagesetup-item2 {
+	flex-basis: 80%;
+	display: flex;
+	align-items: flex-start;
+	justify-content: center;
+	flex-direction: column;
+	padding: 30px;
+	border-radius: 10px;
+	background-image: url(./images/routinesimg1.png);
+	background-size: cover;
+	margin: 10px 5%;
+	position: relative;
+	z-index: 1;
+	overflow: hidden;
+}
+#pagesetup .pagesetup-item2::after {
+	content: '';
+	position: absolute;
+	left: 0;
+	top: 0;
+	height: 100%;
+	width: 100%;
+	background-image: linear-gradient(60deg, #5b9bea 0%, #0a61cc 100%);
+	opacity: 0.5;
+	z-index: -1;
+}
+#pagesetup .pagesetup-bottom .icon {
+	height: 80px;
+	width: 80px;
+	margin-bottom: 20px;
+}
+#pagesetup .pagesetup-item2 h2 {
+	font-size: 2rem;
+	color: white;
+	margin-bottom: 10px;
+	text-transform: uppercase;
+}
+#pagesetup .pagesetup-item2 p {
+	color: white;
+	text-align: left;
+	font-size: 1.4rem;
+	line-height: 1.9rem;
+}
+/* End Page Setup Section */
+
+
+/* Payment Page Setup Section */
+#paymentpagesetup .paymentpagesetup {
+	flex-direction: column;
+	text-align: center;
+	max-width: 1500px;
+	margin: 0 auto;
+	padding: 100px 0;
+}
+
+#paymentpagesetup .section-title {
+	font-size: 4rem;
+	font-weight: 300;
+	color:rgb(112, 158, 242);
+	margin-bottom: 10px;
+	text-transform: uppercase;
+	letter-spacing: .2rem;
+	text-align: center;
+}
+
+#paymentpagesetup .section-title span {
+	color: rgb(58, 115, 214);
+}
+
+#paymentpagesetup p span {
+	color: rgb(58, 115, 214);
+}
+
+#paymentpagesetup .paymentpagesetup-top p{
+	color: black;
+	font-size: 1.7rem;
+	margin-top: 5px;
+	line-height: 2.5rem;
+	font-weight: 300px;
+	letter-spacing: .05rem;
+}
+
+#paymentpagesetup .paymentpagesetup-bottom {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-wrap: wrap;
+	margin-top: 50px;
+}
+
+#paymentpagesetup .paymentpagesetup-item {
+	flex-basis: 80%;
+	display: flex;
+	align-items: flex-start;
+	justify-content: center;
+	flex-direction: column;
+	padding: 30px;
+	border-radius: 10px;
+	background-image: url(assets/img/simpleblue.jpg);
+	background-size: cover;
+	margin: 10px 5%;
+	position: relative;
+	z-index: 1;
+	overflow: hidden;
+}
+
+#paymentpagesetup .paymentpagesetup-item::after {
+	content: '';
+	position: absolute;
+	left: 0;
+	top: 0;
+	height: 100%;
+	width: 100%;
+	background-image: linear-gradient(60deg, #5b9bea 0%, #0a61cc 100%);
+	opacity: 0.5;
+	z-index: -1;
+}
+
+#paymentpagesetup .paymentpagesetup-bottom .icon {
+	height: 80px;
+	width: 80px;
+	margin-bottom: 20px;
+}
+
+#paymentpagesetup .paymentpagesetup-item h2 {
+	font-size: 2rem;
+	color: white;
+	margin-bottom: 10px;
+	text-transform: uppercase;
+}
+
+#paymentpagesetup .paymentpagesetup-item p {
+	color: white;
+	text-align: left;
+	font-size: 1.4rem;
+	line-height: 1.9rem;
+}
+
+
+#paymentpagesetup .paymentpagesetup-item2 {
+	flex-basis: 80%;
+	display: flex;
+	align-items: flex-start;
+	justify-content: center;
+	flex-direction: column;
+	padding: 30px;
+	border-radius: 10px;
+	background-image: url(assets/img/simpleblue.jpg);
+	background-size: cover;
+	margin: 10px 5%;
+	position: relative;
+	z-index: 1;
+	overflow: hidden;
+}
+#paymentpagesetup .paymentpagesetup-item2::after {
+	content: '';
+	position: absolute;
+	left: 0;
+	top: 0;
+	height: 100%;
+	width: 100%;
+	background-image: linear-gradient(60deg, #5b9bea 0%, #0a61cc 100%);
+	opacity: 0.5;
+	z-index: -1;
+}
+#paymentpagesetup .paymentpagesetup-bottom .icon {
+	height: 80px;
+	width: 80px;
+	margin-bottom: 20px;
+}
+#paymentpagesetup .paymentpagesetup-item2 h2 {
+	font-size: 2rem;
+	color: white;
+	margin-bottom: 10px;
+	text-transform: uppercase;
+}
+#paymentpagesetup .paymentpagesetup-item2 p {
+	color: white;
+	text-align: left;
+	font-size: 1.4rem;
+	line-height: 1.9rem;
+}
+/* End Payment Page Setup Section */
+
+
+/* Keyframes Section For Hamburger */
+@keyframes hamburger_puls {
+	0% {
+		opacity: 1;
+		transform: scale(1);
+	}
+	100% {
+		opacity: 0;
+		transform: scale(1.4);
+	}
+}
+/* End Keyframes Section For Hamburger */
+
+
+/* Media Query For Tablet */
+@media only screen and (min-width: 768px) {
+	.cta {
+		font-size: 2.5rem;
+		padding: 20px 60px;
+	}
+	h1.section-title {
+		font-size: 6rem;
+	}
+
+	/* Posts Section */
+	#postssection {
+		flex-direction: column;
+		padding: 20px 80px;
+		align-items: center;
+		justify-content: center;
+		min-width: 20vh;
+	}
+	/* End Posts Section */
+
+	/* Page Setup Section */
+	#pagesetup .pagesetup-bottom .pagesetup-item {
+		flex-basis: 45%;
+		margin: 2.5%;
+	}
+    #pagesetup .pagesetup-bottom .pagesetup-item2 {
+		flex-basis: 45%;
+		margin: 2.5%;
+	}
+	/* End Page Setup Section */
+
+	/* Payment Page Setup Section */
+	#paymentpagesetup .paymentpagesetup-bottom .paymentpagesetup-item {
+		flex-basis: 45%;
+		margin: 2.5%;
+	}
+    #paymentpagesetup .paymentpagesetup-bottom .paymentpagesetup-item2 {
+		flex-basis: 45%;
+		margin: 2.5%;
+	}
+	/* End Page Setup Section */
+}
+/* End Media Query For Tablet */
+
+/* Media Query For Desktop */
+@media only screen and (min-width: 1200px) {
+	/* Header Section */
+	#header .hamburger {
+		display: none;
+	}
+	#header .nav-list ul {
+		position: initial;
+		display: block;
+		height: auto;
+		width: fit-content;
+		background-color: transparent;
+	}
+	#header .nav-list ul li {
+		display: inline-block;
+	}
+	#header .nav-list ul li a {
+		font-size: 1.8rem;
+	}
+	#header .nav-list ul a:after {
+		display: none;
+	}
+	/* End Header Section */
+
+	/* Header Section 2 */
+	#header2 .hamburger2 {
+		display: none;
+	}
+	#header2 .nav-list2 ul {
+		position: initial;
+		display: block;
+		height: auto;
+		width: fit-content;
+		background-color: rgb(28, 74, 154);
+	}
+	#header2 .nav-list2 ul li {
+		display: inline-block;
+	}
+	#header2 .nav-list2 ul li a {
+		font-size: 1.8rem;
+	}
+	#header2 .nav-list2 ul a:after {
+		display: none;
+	}
+	/* End Header Section 2 */
+}
+/* End  Media Query For Desktop */
