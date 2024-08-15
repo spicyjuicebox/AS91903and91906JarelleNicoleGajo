@@ -365,6 +365,25 @@ rgb(58, 115, 214), rgb(112, 158, 242)
 /* End Ordering */
 
 
+#ordernowbutton button {
+	font-size: 2rem;
+	color: white;
+	background-color: rgb(34, 95, 208);
+	border-color: rgb(34, 95, 208);
+	transition: 0.3s ease;
+	text-transform: uppercase;
+	margin-top: 40px;
+	margin-bottom: -20px;
+}
+
+#ordernowbutton button:hover {
+	color: white;
+	background-color: rgb(32, 70, 154);
+	border-color: rgb(32, 70, 154);
+	transition: 0.3s ease;
+}
+
+
 /* Payment Option Section */
 /* Button Styles */
 .btn-lg {
