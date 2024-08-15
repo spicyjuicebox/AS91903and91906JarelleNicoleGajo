@@ -188,6 +188,72 @@ rgb(58, 115, 214), rgb(112, 158, 242)
 	border-color: rgb(150, 185, 235);
 }
 /* End editing the toggle for deleting the post. */
+/* Section Title */
+#postssection .section-title {
+	font-size: 4rem;
+	font-weight: 300;
+	color:rgb(112, 158, 242);
+	margin-bottom: 10px;
+	text-transform: uppercase;
+	letter-spacing: .2rem;
+	text-align: center;
+	margin-top: 50px;
+	margin-bottom: 20px;
+}
+
+#postssection .section-title span{
+	color: rgb(78, 132, 228);
+}
+/* End Section Title */
+#createapostbutton button {
+	color: white;
+	background-color: rgb(112, 158, 242);
+	border-color: rgb(112, 158, 242);
+	transition: 0.3s ease;
+	margin-bottom: 50px;
+}
+
+#createapostbutton button:hover {
+	color: white;
+	background-color: rgb(150, 185, 235);
+	border-color: rgb(150, 185, 235);
+	transition: 0.3s ease;
+}
+
+#backbutton button {
+	color: white;
+	background-color: rgb(112, 158, 242);
+	border-color: rgb(112, 158, 242);
+	transition: 0.3s ease;
+	margin-bottom: 50px;
+}
+
+#backbutton button:hover {
+	color: white;
+	background-color: rgb(150, 185, 235);
+	border-color: rgb(150, 185, 235);
+	transition: 0.3s ease;
+}
+
+#backbutton1 button {
+	color: white;
+	background-color: rgb(112, 158, 242);
+	border-color: rgb(112, 158, 242);
+	transition: 0.3s ease;
+	margin-bottom: 20px;
+}
+
+#backbutton1 button:hover {
+	color: white;
+	background-color: rgb(150, 185, 235);
+	border-color: rgb(150, 185, 235);
+	transition: 0.3s ease;
+}
+
+.custom-dropdown-menu {
+    left: -100px;
+    right: auto;
+}
 /* End Posts Section */
 
 
@@ -246,10 +312,12 @@ rgb(58, 115, 214), rgb(112, 158, 242)
 
 #foodlist .btn-primary {
     background-color: rgb(112, 158, 242);
+	border-color: rgb(112, 158, 242);
 }
 
 #foodlist .btn-primary:hover {
     background-color: rgb(58, 115, 214);
+	border-color: rgb(58, 115, 214);
 }
 
 #foodlist .col-md-8 {
@@ -271,6 +339,10 @@ rgb(58, 115, 214), rgb(112, 158, 242)
     flex-wrap: nowrap;
 }
 
+#foodlist h5 {
+	color: rgb(28, 74, 154);
+}
+
 .accordion-button, .accordion-collapse, .accordion-item {
     width: 100%;
 }
@@ -282,7 +354,7 @@ rgb(58, 115, 214), rgb(112, 158, 242)
 	background-color: rgb(40, 167, 69);
 	border-color: rgb(40, 167, 69);
 	color: white;
-	box-shadow: 0px 5px 18px 0 rgb(40, 167, 69);
+	box-shadow: 0px 5px 18px 0 rgba(40, 168, 70, 0.50);
 }
 
 #foodlist .btn-success:hover {

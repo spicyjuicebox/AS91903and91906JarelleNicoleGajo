@@ -36,7 +36,7 @@
 
 <!-- Posts Section -->
 <section id="postssection">
-    <h1 align="center">{% block header %}Posts{% endblock %}</h1>
+    <h1 align="center" class="section-title">{% block header %}<span>Q&A</span> + <span>Suggestions</span>{% endblock %}</h1>
     <div id="posts" class="mx-auto" style="font-size: 16px;">
         {% for post in posts %}
         <div class="card border-dark">
@@ -66,7 +66,7 @@
                             class="btn btn-sm btn-primary dropdown-toggle"
                             data-toggle="dropdown">
                         </button>
-                        <ul class="dropdown-menu">
+                        <ul class="dropdown-menu custom-dropdown-menu">
                             <li>
                                 <a href="/delete-post/{{post.id}}" class="dropdown-item" style="color: red;">Delete</a>
                             </li>

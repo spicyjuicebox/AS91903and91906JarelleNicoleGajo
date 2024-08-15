@@ -4,6 +4,9 @@
     <div class="form-box">
 
         <h1>Create a Post</h1>
+        <p>Write your questions or suggestions down below.</p>
+        <p>We could consider adding new foods!</p>
+        <p>🚨 Post must be appropriate! 🚨</p>
         <form method="POST" enctype="multipart/form-data">
             {{ form.hidden_tag() }}
 
@@ -41,39 +44,16 @@
         <div class="form-group">
             {{ form.submit(class="btn btn-outline-info") }}
         </div>
+
+        <section id="backbutton1" class="mt-5">
+            <div align="center">
+                <a href="/blog">
+                    <button type="button" class="btn btn-primary btn-lg">
+                        Back
+                    </button>
+                </a>
+            </div>
+        </section>
     </div>
 </div>
 {% endblock %}
-
-
-<!-- Old
-<section id="blogs">
-    <div class="blogs container">
-        <div class="blogs-top">
-            <h1 class="section-title"><span>C</span>reate a <span>P</span>ost</h1>
-            <p>Write your questions or suggestions down below.</p>
-            <p>🚨 Please make sure that your post is appropriate. 🚨</p>
-            <form method="POST">
-                <textarea name="text" id="text" class="form-control" style="font-size: 16px; width: 850px;"></textarea>
-                <br />
-                <div align="center">
-                    <button type="submit" class="btn btn-lg btn-primary">Post</button>
-                </div>
-            </form>
-            <br />
-            <div align="center">
-                <a href="/home">
-                <button type="button" class="btn btn-lg btn-secondary">Back</button></a>
-            </div>
-        </div>
-    </div>
-</section>
--->
-
-<!--
-    <section id="buttonforupdate">
-                <div class="input-group">
-                    <button type="submit">Update</button>
-                </div>
-            </section>
--->

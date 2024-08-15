@@ -17,7 +17,7 @@ auth = Blueprint("auth", __name__)
 # Takes data from the login form.
 # Validates that the email is registered.
 # Checks that the password is correct.
-# Redirecting to the blog page.
+# Redirecting to the blog/Q&A + Suggestions page.
 @auth.route("/login", methods=['GET', 'POST'])
 def login():
     if request.method == 'POST':
