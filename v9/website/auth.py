@@ -51,8 +51,9 @@ def sign_up():
         if email_exists:
             flash('🚨 Email is already in use. Please use a different email.', category='error')
         # This line checks if the email does not end with @gmail.com.
-        elif not (email.endswith('@gmail.com')):
-            flash('🚨 Email must end with @gmail.com.', category='error')
+        # Adding the other email to accept two different email types.
+        elif not (email.endswith('@gmail.com') or email.endswith('@my.sanctamaria.school.nz')):
+            flash('🚨 Email must end with @gmail.com or @my.sanctamaria.school.nz.', category='error')
         elif username_exists:
             flash('🚨 Username is already in use. Please use a different username.', category='error')
         elif password1 != password2:
