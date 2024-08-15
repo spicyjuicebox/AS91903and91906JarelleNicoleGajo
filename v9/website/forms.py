@@ -32,8 +32,8 @@ class UpdateAccountForm(FlaskForm):
             if user:
                 raise ValidationError('That email is taken. Please choose a different one.')
         
-        if not email.data.endswith('@gmail.com'):
-            raise ValidationError('Email must end with @gmail.com.')
+        if not (email.data.endswith('@gmail.com') or email.data.endswith('@my.sanctamaria.school.nz')):
+            raise ValidationError('🚨 Email must end with @gmail.com or @my.sanctamaria.school.nz.')
 
 
 # Creating a Post Form
