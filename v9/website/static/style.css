@@ -889,6 +889,17 @@ p {
 	color: rgb(78, 132, 228);
 }
 
+#pagesetup h1 {
+	font-size: 20px;
+	font-weight: 300;
+	color:red;
+	margin-bottom: 10px;
+	text-transform: uppercase;
+	letter-spacing: .2rem;
+	text-align: center;
+	margin-top: 40px;
+}
+
 #foodlist .pagesetup-top h1 {
 	font-size: 4rem;
 	font-weight: 300;
@@ -899,6 +910,7 @@ p {
 	text-align: center;
 	margin-top: 50px;
 }
+
 #pagesetup .pagesetup-top p span{
 	color: rgb(78, 132, 228);
 	font-size: 1.7rem;
