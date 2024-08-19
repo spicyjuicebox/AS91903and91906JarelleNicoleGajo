@@ -1,0 +1,31 @@
+{% extends "template2.html" %} {% block title %}Contact{% endblock %}
+
+{% block content %}
+<!-- Contact Section -->
+<section id="contact">
+    <div class="contact container">
+      <div>
+        <h1 class="section-title">Contact <span>Info</span></h1>
+      </div>
+      <div class="contact-items">
+        <div class="contact-item">
+          <div class="icon"><img src="{{ url_for('static', filename='assets/img/icons8-email-100.png') }}" alt="Mail Logo"></div>
+          <div class="contact-info">
+            <h1>Email Jackie Andrews</h1>
+            <h2>Contact Head of Tuckshop</h2>
+            <a href="mailto:test@my.sanctamaria.school.nz?Subject=Information%20Request" target="_top">test@my.sanctamaria.school.nz</a>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="icon"><img src="{{ url_for('static', filename='assets/img/icons8-email-100.png') }}" alt="Mail Logo"></div>
+          <div class="contact-info">
+            <h1>Email Denzelle Mercado</h1>
+            <h2>Contact Tuckshop Student Helpers</h2>
+            <a href="mailto:test@my.sanctamaria.school.nz?Subject=Information%20Request" target="_top">test@my.sanctamaria.school.nz</a>
+          </div>
+        </div>
+      </div>
+    </div>
+</section>
+<!-- End Contact Section -->
+{% endblock %}

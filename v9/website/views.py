@@ -29,6 +29,18 @@ def blog():
 #return render_template("blog.html", user=current_user, posts=posts)
 
 
+@views.route("/contact")
+@login_required
+def contact():
+    return render_template("contact.html", user=current_user)
+
+
+@views.route("/about")
+@login_required
+def about():
+    return render_template("about.html", user=current_user)
+
+
 @views.route("/order", methods=['GET', 'POST'])
 @login_required
 def menu():
