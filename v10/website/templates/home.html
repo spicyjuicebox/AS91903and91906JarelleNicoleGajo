@@ -1,0 +1,97 @@
+{% extends "template.html" %} {% block title %}Home{% endblock %}
+
+{% block content %}
+<!-- Bootstrap Carousel -->
+<div id="hero-carousel" class="carousel slide" data-bs-ride="carousel">
+    <!-- Carousel Indicators -->
+    <div class="carousel-indicators">
+        <button type="button" data-bs-target="#hero-carousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#hero-carousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+        <button type="button" data-bs-target="#hero-carousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+    </div>
+
+    <!-- Bootstrap Carousel Slides -->
+    <div class="carousel-inner">
+        <!-- Slide 1 -->
+        <div class="carousel-item active c-item">
+            <img src="{{ url_for('static', filename='assets/img/homeslide1.jpeg') }}" class="d-block w-100 c-img" alt="Slide 1">
+            <div class="carousel-caption top-0 mt-3">
+                <h2 class="text-uppercase">Welcome to the</h2>
+                <h1 class="display-1 fw-bolder text-capitalize">SMC Tuckshop Orders</h1>
+            </div>
+        </div>
+        <!-- Slide 2 -->
+        <div class="carousel-item c-item">
+            <img src="{{ url_for('static', filename='assets/img/kimberly-farmer-lUaaKCUANVI-unsplash.jpg') }}" class="d-block w-100 c-img" alt="Slide 2">
+            <div class="carousel-caption top-0 mt-3">
+                <h2 class="text-uppercase">Make your order</h2>
+                <h1 class="display-1 fw-bolder text-capitalize">Today!</h1>
+            </div>
+        </div>
+        <!-- Slide 3 -->
+        <div class="carousel-item c-item">
+            <img src="{{ url_for('static', filename='assets/img/smcslide3.jpg') }}" class="d-block w-100 c-img" alt="Slide 3">
+            <div class="carousel-caption top-0 mt-3">
+                <h2 class="text-uppercase">Make your order</h2>
+                <h1 class="display-1 fw-bolder text-capitalize">And Simply Collect!</h1>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap Carousel Arrows -->
+    <button class="carousel-control-prev" type="button" data-bs-target="#hero-carousel" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#hero-carousel" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+    </button>
+</div>
+<!-- End Bootstrap Carousel -->
+
+<!-- Page Setup Section -->
+<section id="pagesetup">
+    <div class="pagesetup container">
+        <div class="pagesetup-top">
+            <h1 class="section-title"><span>WELCOME </span>to the <span>SMC </span>Tuckshop</h1>
+            <p>We are open every school day during <span>INTERVAL</span> and <span>LUNCH</span> for pickup.</p>
+            <p>Please contact the staff if you are absent on the day of pickup.</p>
+            <h1>Please Note</h1>
+            <p>Once your order is placed, it will be ready the day after.</p>
+            <p>Example: If you want to collect your ordered lunch on a Monday, make your order the day before.</p>
+            <p>Thank you!</p>
+            <!-- Order Now Button
+            <section id="ordernowbutton" class="mt-4">
+                <div align="center">
+                    <a href="/order">
+                        <button type="button" class="btn btn-primary btn-lg">
+                            Order Now
+                        </button>
+                    </a>
+                </div>
+            </section>
+            -->
+            <!-- New Order Now Button -->
+            <a href="/order" class="cta">Order Now</a>
+        </div>
+        <div class="pagesetup-bottom">
+            <div class="pagesetup-item">
+                <div class="icon">
+                    <img src="{{ url_for('static', filename='assets/img/icons8-1-100.png') }}" alt="Icon1">
+                </div>
+                <h2>Order</h2>
+                <p>Head to the 'Order' page and create your order by adding all the items to your cart.</p>
+            </div>
+            <div class="pagesetup-item2">
+                <div class="icon">
+                    <img src="{{ url_for('static', filename='assets/img/icons8-2-100.png') }}" alt="Icon2">
+                </div>
+                <h2>Finish</h2>
+                <p>Make your payment and you will have your order placed and ready for pickup the next day.</p>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- End Page Setup Section -->
+{% endblock %}

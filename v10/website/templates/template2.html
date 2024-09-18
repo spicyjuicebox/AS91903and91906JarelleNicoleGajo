@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- New Set of Links and Script -->
+    <link rel="icon" href="static/assets/img/icons8-lunch-bag-96.png" type="image/x-icon">
+    <title>{% block title %}{% endblock %} - SMC Tuckshop</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+    <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/999ca2bb93.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+  </head>
+
+  <body>
+    <!-- Second Version of Header -->
+    <header>
+      <!-- Header -->
+      <section id="header2">
+        <div class="header2 container">
+          <div class="nav-bar2">
+            <div class="brand">
+              <a href="/home">
+                <h1><span>SMC </span>Tuckshop<span></span></h1>
+              </a>
+            </div>
+            <!-- Looged Out Nav List -->
+            <div class="nav-list2">
+              <div class="hamburger2">
+                <div class="bar"></div>
+              </div>
+              <ul>
+                {% if user.is_authenticated %}
+                  <li class="nav-item">
+                    <a class="nav-link" href="/order">Order</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="/qasuggestions">Q&A + Suggestions</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="/about">About</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="/home"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAACXBIWXMAAAsTAAALEwEAmpwYAAAApElEQVR4nO3RoQ5BURjA8cNMsSmCrGiSN9BkzUvYFNUreADNM2iy4gUUzabaBAI/E7CxO9e9THB/22ln/2/nOyH8FfQv5xvhHIbuRsh/Kl7A2LMJimnjJUxFm6GcNF7B3GsLVN+N17CMEb9aoR433sDa+zZovoq3sJXcDu2oeAd76R3QfYz3cPQ5JwyiXpJKiPHJvxkQEt7LBjzJVnSTeEWZ8OAMA6G5Kg7kLikAAAAASUVORK5CYII=" alt="Home"></a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="/account"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAACXBIWXMAAAsTAAALEwEAmpwYAAABDklEQVR4nM3Vvy4EURTH8dm1GsJGJBJ0CiIRChGVhsKSqLyFF1AohIiEQuMlJB5AIzqlTnQewAuIf/GRSaYxmdkZd27hm9z29z3nzjlzk+S/gDFsYhcrGIgVPIhLfPrNA9ZjCC7057hJ+DDeKwRv6fWFClbVYyNUsFZTsBUqmK0pWAgVdPBR4xt0QgXLNTuYDxVM4KtGB6NBgkxyWiE4CA7PBON9duEVI40EKTgpERwmMcBOiaAXS9DFfS78FkNNg6dxjhvMYAnb6WJhDnc4w2TI/F/nftHfeMwqf8p1ky7jFRargttZxVWzX0Za0BFaZYJ9cdgrCm/hJZLguUgwJS7dovtPH/ZYp/2nyQrlB9Fm2+sYDqzVAAAAAElFTkSuQmCC"></a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="/contact"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAACXBIWXMAAAsTAAALEwEAmpwYAAAA70lEQVR4nO3SIUsEQRiH8fO0qGAzWAS7GAz3AQRB4b6AWExWo1WwWAWL9aLVoF9AyxW7RdcuiBZR+cnCLAw47t7uHWjYB94w8878H5h3Op2WfwM28WB8HvOslODM5DhOCbrYx8sYwc8hY6rsqZYwaBB+gcWy4Cv0o3V/xJncYyO6t4thSlBwieWwN4sjvCeCP3CK+XB2BddFs0yQ84ZDTIfeGm6j/g1WQ28GB3iNA6oEBUOsR59gJ1Q37PVwl7o4qiDnC+dYiM7O4QSffqGOoCDDXqgnFTQR1KIVNHqiysHVIEsJtickybD1Q9DyZ3wD9iWZxEkjIisAAAAASUVORK5CYII="></a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="/logout"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAn0lEQVR4nO3VMQrCQBSE4XR2go0XsfQUnsLcIJ5Az2BvoZ7BFDZWKfUqln4iBBQMshuyoJKBKff9y5sHk2V/IwywwDrCK4xDAYV22ocCHj9qo6oHfM+KsEGJYSrAHDec3iBdXZEnpMIoFHDGFJMGz+phr77W78pQwKUl4JBiRXljDh2FnCcNGVsck53pR/WAlIWzi6nMIrIyl8GV+bO6A8ucCiz4j8n9AAAAAElFTkSuQmCC"></a>
+                  </li>
+                <!-- Logged in Nav List -->
+                {% else %}
+                  <li class="nav-item">
+                    <a class="nav-link" href="/login">Login</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="/sign-up">Sign Up</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="/home"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAACXBIWXMAAAsTAAALEwEAmpwYAAAApElEQVR4nO3RoQ5BURjA8cNMsSmCrGiSN9BkzUvYFNUreADNM2iy4gUUzabaBAI/E7CxO9e9THB/22ln/2/nOyH8FfQv5xvhHIbuRsh/Kl7A2LMJimnjJUxFm6GcNF7B3GsLVN+N17CMEb9aoR433sDa+zZovoq3sJXcDu2oeAd76R3QfYz3cPQ5JwyiXpJKiPHJvxkQEt7LBjzJVnSTeEWZ8OAMA6G5Kg7kLikAAAAASUVORK5CYII=" alt="Home"></a>
+                  </li>
+                {% endif %}
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- End Header -->
+    </header>
+
+
+        <!-- Flash Messages -->
+        {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %} {% for category, message in messages %}
+        {% if category == 'error' %}
+          <div class="alert alert-danger alter-dismissable fade show" role="alert">
+            {{ message }}
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </button>
+          </div>
+          {% else %}
+          <div class="alert alert-success alter-dismissable fade show" role="alert">
+            {{ message }}
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          {% endif %} {% endfor %} {% endif %} {% endwith %}
+    
+
+    <!-- Main Content -->
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+
+
+    <!-- Footer -->
+    <footer>
+      <!-- Footer Wave -->
+      <div class="waves">
+        <div class="wave" id="wave1"></div>
+        <div class="wave" id="wave2"></div>
+      </div>
+      <!-- Footer Logo -->
+      <div class="footerlogo">
+        <img src="static/assets/img/icons8-lunch-bag-96.png" style="margin-top: -15px;" alt="Tuckshop Logo">
+      </div>
+      <!-- Footer Links -->
+      <ul class="menu">
+        <h2>Other Useful Links:</h2>
+        <li><a href="https://www.sanctamaria.school.nz/" target="_blank">Sancta Maria College Website</a></li>
+        <li><a href="https://icons8.com/license" target="_blank">Icons8</a></li>
+        <li><a href="https://unsplash.com/" target="_blank">Unsplash</a></li>
+      </ul>
+      <p><a target="_blank" href="https://icons8.com/icon/5gi5Fhj344Ay/1"></a>Logos & Icons used by <a target="_blank" href="https://icons8.com">Icons8</a>, Images used by <a target="_blank" href="https://unsplash.com/">Unsplash</a></p>
+      <p>Copyright © 2024 SMC Tuckshop</p>
+    </footer>
+    <!-- End Footer -->
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.1.3/js/bootstrap.bundle.min.js"></script>
+    <script src="{{ url_for('static', filename='app.js') }}"></script>
+
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    <script
+      type="text/javascript"
+      src="{{ url_for('static', filename='index.js')}}">
+    </script>
+  </body>
+</html>

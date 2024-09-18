@@ -1,0 +1,37 @@
+{% extends "template2.html" %} {% block title %}Payment Option{% endblock %}
+
+{% block content %}
+<!-- Payment Option Page Section -->
+<section id="paymentpagesetup">
+    <div class="paymentpagesetup container">
+      <div class="paymentpagesetup-top">
+        <h1 class="section-title">How would you like to <span>Pay</span>?</h1>
+        <p>Please choose if you would like to pay with <span>CASH</span> or <span>CARD</span>.</p>
+      </div>
+      <div class="paymentpagesetup-bottom">
+        <div class="paymentpagesetup-item">
+          <div class="icon"><img src="{{ url_for('static', filename='assets/img/cashicon.png') }}" alt="Cash Icon"></div>
+          <h2>Cash Option</h2>
+          <p>By choosing the cash option, you are to pay for your order with cash during collection.</p>
+          <button class="btn btn-cash btn-lg mx-3" onclick="window.location.href='{{ url_for('views.cash_payment', order=request.args.get('order'), total=request.args.get('total')) }}'">Cash</button>
+        </div>
+        <div class="paymentpagesetup-item2">
+          <div class="icon"><img src="{{ url_for('static', filename='assets/img/cardicon.png') }}" alt="Card Icon"></div>
+          <h2>Card Option</h2>
+          <p>By choosing the card option, you are to pay for your order on this site.</p>
+          <button class="btn btn-card btn-lg mx-3" onclick="window.location.href='{{ url_for('views.card_payment', order=request.args.get('order'), total=request.args.get('total')) }}'">Card</button>
+        </div>
+      </div>
+    </div>
+</section>
+<!-- Back Button -->
+<section id="ordernowbutton" class="mt-4">
+  <div align="center">
+      <a href="/order">
+          <button type="button" class="btn btn-primary btn-lg" style="margin-top: -200px;">
+              Back
+          </button>
+      </a>
+  </div>
+</section>
+{% endblock %}

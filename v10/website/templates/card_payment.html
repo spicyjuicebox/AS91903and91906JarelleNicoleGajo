@@ -1,0 +1,74 @@
+{% extends "template2.html" %} {% block title %}Card Payment{% endblock %}
+
+{% block content %}
+<!-- Page Setup Section -->
+<!-- Adding max length and requirements for submit button to work. -->
+<section id="pagesetup">
+    <div class="pagesetup container">
+        <div class="pagesetup-top">
+            <h1 class="section-title">You have Chosen the <span>CARD</span> Option!</h1>
+            <p>Please pay for your order with a valid credit card.</p>
+            <p>The total amount to be paid is: ${{ total_price }}</p>
+            <form action="{{ url_for('views.process_card_payment') }}" method="post" class="mt-5" id="paymentForm">
+                <input type="hidden" name="order" value="{{ request.args.get('order') }}"> <!-- Makes the request to get the total price of the order. -->
+                <input type="hidden" name="total" value="{{ total }}"> <!-- Makes sure that the total price is passing through. This helped fixed an error. -->
+
+                <!-- Card Number -->
+                <div class="mb-3">
+                    <label for="cardNumber" class="form-label" style="font-size: 16px;">Card Number</label>
+                    <!-- Change: Changed type from 'text' to 'number'. Changed back to text for maxlength to work. -->
+                    <input type="text" maxlength="16" class="form-control mx-auto text-center" style="font-size: 16px; width: 250px;" id="cardNumber" name="cardNumber" required>
+                </div>
+
+                <!-- Month -->
+                <div class="mb-3">
+                    <label for="expMonth" class="form-label" style="font-size: 16px;">Expiration MM</label>
+                    <select id="expMonth" class="form-control mx-auto text-center" style="font-size: 16px; width: 250px;" required>
+                        <option value="" selected disabled>Month</option>
+                        <option value="01">01</option>
+                        <option value="02">02</option>
+                        <option value="03">03</option>
+                        <option value="04">04</option>
+                        <option value="05">05</option>
+                        <option value="06">06</option>
+                        <option value="07">07</option>
+                        <option value="08">08</option>
+                        <option value="09">09</option>
+                        <option value="10">10</option>
+                        <option value="11">11</option>
+                        <option value="12">12</option>
+                    </select>
+                </div>
+
+                <!-- Year -->
+                <div class="mb-3">
+                    <label for="expYear" class="form-label" style="font-size: 16px;">Expiration YY</label>
+                    <select id="expYear" class="form-control mx-auto text-center" style="font-size: 16px; width: 250px;" required>
+                        <option value="" selected disabled>Year</option>
+                        <option value="2024">2024</option>
+                        <option value="2025">2025</option>
+                        <option value="2026">2026</option>
+                        <option value="2027">2027</option>
+                        <option value="2028">2028</option>
+                        <option value="2029">2029</option>
+                        <option value="2030">2030</option>
+                    </select>
+                </div>
+
+                <!-- CVV -->
+                <div class="mb-3">
+                    <label for="cvv" class="form-label" style="font-size: 16px;">CVV</label>
+                    <!-- Maxlength only works for type="text" -->
+                    <input type="text" maxlength="3" class="form-control mx-auto text-center" style="font-size: 16px; width: 250px;" id="cvv" name="cvv" required>
+                </div>
+
+                <!-- Submit Payment -->
+                <div class="d-flex justify-content-center mt-5">
+                    <button type="submit" href="{{ url_for('views.thank_you') }}" class="btn btn-success btn-lg" style="font-size: 16px;" id="submitPayment">Submit Payment</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</section>
+<script src="{{ url_for('static', filename='/cardpayment.js') }}"></script>
+{% endblock %}

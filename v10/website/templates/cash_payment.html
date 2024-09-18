@@ -1,0 +1,28 @@
+{% extends "template2.html" %} {% block title %}Cash Payment{% endblock %}
+
+{% block content %}
+<!-- Page Setup Section -->
+<section id="pagesetup">
+    <div class="pagesetup container">
+        <div class="pagesetup-top">
+            <h1 class="section-title">You have Chosen the <span>CASH</span> Option!</h1>
+            <p>Please pay for your order during pickup.</p>
+            <p>The total amount to be paid is: ${{ total_price }}</p>
+            <!--<div class="d-flex justify-content-center mt-5">
+                <a href="{{ url_for('views.thank_you') }}" class="btn btn-success btn-lg">Continue</a>
+            </div>-->
+
+            <!-- Update the Database -->
+            <form action="{{ url_for('views.process_cash_payment') }}" method="post" class="mt-5" id="paymentForm"> <!-- When 'Continue' button is clicked, database is updated. -->
+                <input type="hidden" name="order" value="{{ request.args.get('order') }}"> <!-- Makes the request to get the total price of the order. -->
+                <input type="hidden" name="total" value="{{ total }}"> <!-- Makes sure that the total price is passing through. This helped fixed an error. -->
+                <!-- Submit Payment -->
+                <div class="d-flex justify-content-center mt-5">
+                    <button type="submit" href="{{ url_for('views.thank_you') }}" class="btn btn-success btn-lg" style="font-size: 16px;" id="submitPayment">Continue</button>
+                </div>
+            </form>
+
+        </div>
+    </div>
+</section>
+{% endblock %}
