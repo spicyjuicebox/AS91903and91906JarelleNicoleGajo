@@ -1,0 +1,85 @@
+{% extends "template.html" %} {% block title %}Home{% endblock %}
+
+{% block content %}
+<!-- Bootstrap Carousel -->
+<div id="hero-carousel" class="carousel slide" data-bs-ride="carousel">
+    <!-- Carousel Indicators -->
+    <div class="carousel-indicators">
+        <button type="button" data-bs-target="#hero-carousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#hero-carousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+        <button type="button" data-bs-target="#hero-carousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+    </div>
+
+    <!-- Bootstrap Carousel Slides -->
+    <div class="carousel-inner">
+        <!-- Slide 1 -->
+        <div class="carousel-item active c-item">
+            <img src="{{ url_for('static', filename='assets/img/smcslide2.jpg') }}" class="d-block w-100 c-img" alt="Slide 1 (Photo of the front of SMC from a low angle.)">
+            <div class="carousel-caption top-0 mt-3">
+                <h2 class="text-uppercase">Welcome to the</h2>
+                <h1 class="display-1 fw-bolder text-capitalize">SMC Tuckshop Website</h1>
+            </div>
+        </div>
+        <!-- Slide 2 -->
+        <div class="carousel-item c-item">
+            <img src="{{ url_for('static', filename='assets/img/element5-digital-OyCl7Y4y0Bk-unsplash.jpg') }}" class="d-block w-100 c-img" alt="Slide 2 (Apple on top of a Stack of Books">
+            <div class="carousel-caption top-0 mt-3">
+                <h2 class="text-uppercase">Got a Question?</h2>
+                <h1 class="display-1 fw-bolder text-capitalize">Head to the Q&A Page!</h1>
+            </div>
+        </div>
+        <!-- Slide 3 -->
+        <div class="carousel-item c-item">
+            <img src="{{ url_for('static', filename='assets/img/homeslide1.jpeg') }}" class="d-block w-100 c-img" alt="Slide 3 with White and Green Background">
+            <div class="carousel-caption top-0 mt-3">
+                <h2 class="text-uppercase">Got a Suggestion?</h2>
+                <h1 class="display-1 fw-bolder text-capitalize">Head to the Suggestions Page!</h1>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap Carousel Arrows -->
+    <button class="carousel-control-prev" type="button" data-bs-target="#hero-carousel" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#hero-carousel" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+    </button>
+</div>
+<!-- End Bootstrap Carousel -->
+
+<!-- Page Setup Section -->
+<section id="pagesetup">
+    <div class="pagesetup container">
+        <div class="pagesetup-top">
+            <h1 class="section-title"><span>WELCOME </span>to the <span>SMC </span>Tuckshop</h1>
+            <p>The tuckshop is open every school day during <span>INTERVAL</span> and <span>LUNCH</span>.</p>
+            <h1>Got any Questions or Suggestions?</h1>
+            <p>Simply head on over to the Q&A / Suggestions page and create your post for others to comment on and answer!</p>
+            <p>Please make sure that your posts are appropriate.</p>
+            <p>Thank you!</p>
+            <!-- Q&A / Suggestions Page Button -->
+            <a href="/qasuggestions" class="cta">Post your Question or Suggestion!</a>
+        </div>
+        <div class="pagesetup-bottom">
+            <div class="pagesetup-item">
+                <div class="icon">
+                    <img src="{{ url_for('static', filename='assets/img/icons8-love-100.png') }}" alt="Icon of Heart.">
+                </div>
+                <h2>We Value your Opinions!</h2>
+                <p>To make the tuckshop at SMC the best it can be, we would love to hear all your questions and suggestions. This way, we can make further improvements and considerations of foods that we could incorporate to the tuckshop, making all our students happy!<br>If you have any thoughts, head to the Q&A / Suggestions page to make your post.</p>
+            </div>
+            <div class="pagesetup-item2">
+                <div class="icon">
+                    <img src="{{ url_for('static', filename='assets/img/icons8-lady-with-envelope-100.png') }}" alt="Icon of Lady with paper behind her.">
+                </div>
+                <h2>Top-Tier Service</h2>
+                <p>SMC Tuckshop has a fully qualified and committed team to ensuring that your needs for foods and drinks are fulfilled during your time at school.<br>Our team will do their best to reply and consider your questions and suggestions. To ask privately, use the Contacts page.</p>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- End Page Setup Section -->
+{% endblock %}
