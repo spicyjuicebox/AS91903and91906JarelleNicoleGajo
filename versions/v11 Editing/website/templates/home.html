@@ -8,13 +8,14 @@
         <button type="button" data-bs-target="#hero-carousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
         <button type="button" data-bs-target="#hero-carousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
         <button type="button" data-bs-target="#hero-carousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+        <button type="button" data-bs-target="#hero-carousel" data-bs-slide-to="3" aria-label="Slide 4"></button>
     </div>
 
     <!-- Bootstrap Carousel Slides -->
     <div class="carousel-inner">
         <!-- Slide 1 -->
         <div class="carousel-item active c-item">
-            <img src="{{ url_for('static', filename='assets/img/smcslide2.jpg') }}" class="d-block w-100 c-img" alt="Slide 1 (Photo of the front of SMC from a low angle.)">
+            <img src="{{ url_for('static', filename='assets/img/smchomeslide1.jpg') }}" class="d-block w-100 c-img" alt="Slide 1 (Photo of the front of SMC from a low angle.)">
             <div class="carousel-caption top-0 mt-3">
                 <h2 class="text-uppercase">Welcome to the</h2>
                 <h1 class="display-1 fw-bolder text-capitalize">SMC Tuckshop Website</h1>
@@ -22,7 +23,7 @@
         </div>
         <!-- Slide 2 -->
         <div class="carousel-item c-item">
-            <img src="{{ url_for('static', filename='assets/img/element5-digital-OyCl7Y4y0Bk-unsplash.jpg') }}" class="d-block w-100 c-img" alt="Slide 2 (Apple on top of a Stack of Books">
+            <img src="{{ url_for('static', filename='assets/img/element5-digital-OyCl7Y4y0Bk-unsplashhomeslide2.jpg') }}" class="d-block w-100 c-img" alt="Slide 2 (Apple on top of a Stack of Books.)">
             <div class="carousel-caption top-0 mt-3">
                 <h2 class="text-uppercase">Got a Question?</h2>
                 <h1 class="display-1 fw-bolder text-capitalize">Head to the Q&A Page!</h1>
@@ -30,10 +31,18 @@
         </div>
         <!-- Slide 3 -->
         <div class="carousel-item c-item">
-            <img src="{{ url_for('static', filename='assets/img/homeslide1.jpeg') }}" class="d-block w-100 c-img" alt="Slide 3 with White and Green Background">
+            <img src="{{ url_for('static', filename='assets/img/greenbackgroundhomeslide3.jpeg') }}" class="d-block w-100 c-img" alt="Slide 3 (White and Green Background.)">
             <div class="carousel-caption top-0 mt-3">
                 <h2 class="text-uppercase">Got a Suggestion?</h2>
                 <h1 class="display-1 fw-bolder text-capitalize">Head to the Suggestions Page!</h1>
+            </div>
+        </div>
+        <!-- Slide 4 -->
+        <div class="carousel-item c-item">
+            <img src="{{ url_for('static', filename='assets/img/meg-boulden-yiob91CAqN8-unsplashhomeslide4.jpg') }}" class="d-block w-100 c-img" alt="Slide 4 (Row of Apples with White Background.)">
+            <div class="carousel-caption top-0 mt-3">
+                <h2 class="text-uppercase">Need to see the Menu?</h2>
+                <h1 class="display-1 fw-bolder text-capitalize">Head to the Menu Page!</h1>
             </div>
         </div>
     </div>

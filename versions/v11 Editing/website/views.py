@@ -143,6 +143,14 @@ def about(): # The 'about' function defined.
     return render_template("about.html", user=current_user) # Render the About page for the current user.
 
 
+# Route for Menu
+# Directing the user to the Menu page.
+@views.route("/menu")
+@login_required
+def menu(): # The 'contact' function defined.
+    return render_template("menu.html", user=current_user) # Render the Menu page for the current user.
+
+
 # Account
 # Route for Saving the Profile Picture
 def save_picture(form_picture): # The 'form_picture' function defined.
