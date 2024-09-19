@@ -1,0 +1,35 @@
+{% extends "template2.html" %} {% block title %}Contact{% endblock %}
+
+{% block content %}
+<!-- Contact Section -->
+<section id="contact">
+    <div class="contact container">
+      <div>
+        <h1 class="section-title" style="margin-bottom: 100px;">Contact <span>Info</span></h1>
+        <h3 class="section-title-contact" style="margin-top: -80px;">Got any questions or inquiries you want to privately ask the staff about?</h3>
+        <h3 class="section-title-contact" style="margin-top: -40px;">Use either of the emails down below!</h3>
+      </div>
+      <!-- First Contact Box -->
+      <div class="contact-items">
+        <div class="contact-item">
+          <div class="icon"><img src="{{ url_for('static', filename='assets/img/icons8-email-100.png') }}" alt="Mail Logo"></div>
+          <div class="contact-info">
+            <h1>Email Jackie Andrews</h1>
+            <h2>Contact Head of Tuckshop</h2>
+            <a href="mailto:j.andrews@sanctamaria.school.nz?Subject=Information%20Request" target="_top">j.andrews@sanctamaria.school.nz</a>
+          </div>
+        </div>
+        <!-- Second Contact Box -->
+        <div class="contact-item">
+          <div class="icon"><img src="{{ url_for('static', filename='assets/img/icons8-email-100.png') }}" alt="Mail Logo"></div>
+          <div class="contact-info">
+            <h1>Email Denzelle Mercado</h1>
+            <h2>Contact Tuckshop Student Helpers</h2>
+            <a href="mailto:18133@my.sanctamaria.school.nz?Subject=Information%20Request" target="_top">18133@my.sanctamaria.school.nz</a>
+          </div>
+        </div>
+      </div>
+    </div>
+</section>
+<!-- End Contact Section -->
+{% endblock %}
