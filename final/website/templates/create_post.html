@@ -1,0 +1,63 @@
+{% extends "template2.html" %} {% block title %}Create Post{% endblock %}
+{% block content %}
+<div class="form-container">
+    <div class="form-box">
+
+        <!-- Form for Creating a Post -->
+        <h1>Create a Post</h1>
+        <p>Write your questions or suggestions down below.</p>
+        <p>We could consider adding new foods!</p>
+        <p>🚨 Post must be appropriate! 🚨</p>
+        <form method="POST" enctype="multipart/form-data">
+            {{ form.hidden_tag() }}
+
+            <!-- Title -->
+            <div class="form-group">
+                {{ form.title.label(class="form-control-label") }}
+                {% if form.title.errors %}
+                    {{ form.title(class="form-control form-control-lg is-invalid")}}
+                    <div class="invalid-feedback">
+                        {% for error in form.title.errors %}
+                            <span>{{ error }}</span>
+                        {% endfor %}
+                    </div>
+                {% else %}
+                    {{ form.title(class="form-control form-control-lg")}}
+                {% endif %}
+            </div>
+
+            <!-- Text -->
+            <div class="form-group">
+                {{ form.text.label(class="form-control-label") }}
+                {% if form.text.errors %}
+                    {{ form.text(class="form-control form-control-lg is-invalid")}}
+                    <div class="invalid-feedback">
+                        {% for error in form.text.errors %}
+                            <span>{{ error }}</span>
+                        {% endfor %}
+                    </div>
+                {% else %}
+                    {{ form.text(class="form-control form-control-lg")}}
+                {% endif %}
+            </div>
+        </fieldset>
+        </br>
+
+        <!-- Update Button -->
+        <div class="form-group">
+            {{ form.submit(class="btn btn-outline-info", style="font-size: 20px; margin-left: 155px; background-color: rgb(112, 158, 242); border-color: rgb(112, 158, 242);") }}
+        </div>
+
+        <!-- Back Button -->
+        <section id="backbutton1" class="mt-5">
+            <div align="center">
+                <a href="/qasuggestions">
+                    <button type="button" class="btn btn-primary btn-lg">
+                        Back
+                    </button>
+                </a>
+            </div>
+        </section>
+    </div>
+</div>
+{% endblock %}
